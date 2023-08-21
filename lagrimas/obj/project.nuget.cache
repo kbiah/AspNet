@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "An5ltHMbf4GGzQBH8KPM+GulKFQp+N2ZV9UEZjgT/FXGjNRwZhQi5K1Q1uaVPqLBKHzSNS3iZkAdRdTuEVJVxQ==",
+  "dgSpecHash": "ISqvzFAqWZA8YfTV6Vt3R7B8elcsE/OZqWD/U37hmQpWmN1tD0DqBZCVeM99tHS2tOVnkWvmeaznJj6Ufg+AJA==",
   "success": true,
-  "projectFilePath": "D:\\Estudos\\lagrimas\\lagrimas\\lagrimas.csproj",
+  "projectFilePath": "D:\\AspNet\\AspNet\\lagrimas\\lagrimas.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\bianca.kerkhoff\\.nuget\\packages\\entityframework\\6.4.4\\entityframework.6.4.4.nupkg.sha512",
     "C:\\Users\\bianca.kerkhoff\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
@@ -10,6 +10,7 @@
     "C:\\Users\\bianca.kerkhoff\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\5.0.1\\microsoft.aspnetcore.cryptography.keyderivation.5.0.1.nupkg.sha512",
     "C:\\Users\\bianca.kerkhoff\\.nuget\\packages\\microsoft.aspnetcore.dataprotection\\2.2.0\\microsoft.aspnetcore.dataprotection.2.2.0.nupkg.sha512",
     "C:\\Users\\bianca.kerkhoff\\.nuget\\packages\\microsoft.aspnetcore.dataprotection.abstractions\\2.2.0\\microsoft.aspnetcore.dataprotection.abstractions.2.2.0.nupkg.sha512",
+    "C:\\Users\\bianca.kerkhoff\\.nuget\\packages\\microsoft.aspnetcore.diagnostics.entityframeworkcore\\5.0.1\\microsoft.aspnetcore.diagnostics.entityframeworkcore.5.0.1.nupkg.sha512",
     "C:\\Users\\bianca.kerkhoff\\.nuget\\packages\\microsoft.aspnetcore.hosting.abstractions\\2.2.0\\microsoft.aspnetcore.hosting.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\bianca.kerkhoff\\.nuget\\packages\\microsoft.aspnetcore.hosting.server.abstractions\\2.2.0\\microsoft.aspnetcore.hosting.server.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\bianca.kerkhoff\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",

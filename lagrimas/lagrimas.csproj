@@ -33,7 +33,9 @@
 
   <ItemGroup>
     <Content Include="Areas\Discente\Views\Academico\Create.cshtml" />
+	<Content Include="Areas\Discente\Views\Academico\Details.cshtml" />
     <Content Include="Areas\Discente\Views\Academico\Index.cshtml" />
+	  <Content Include="Areas\Discente\Views\Academico\Edit.cshtml" />
     <Content Include="Areas\Discente\Views\_ViewImports.cshtml">
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
@@ -42,6 +44,7 @@
 
   <ItemGroup>
     <PackageReference Include="EntityFramework" Version="6.4.4" />
+    <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="5.0.1" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="5.0.1" />
     <PackageReference Include="Microsoft.AspNetCore.Session" Version="2.2.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.17" />
@@ -144,5 +147,5 @@
   <ItemGroup>
     <UpToDateCheckInput Remove="Areas\Cadastros\Views\Instituicao\Index.cshtml" />
   </ItemGroup>
-
+	
 </Project>

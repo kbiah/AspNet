@@ -269,6 +269,36 @@ namespace lagrimas.Migrations
                     b.ToTable("Academicos");
                 });
 
+            modelBuilder.Entity("Modelo.Docente.CursoProfessor", b =>
+                {
+                    b.Property<long?>("CursoID")
+                        .HasColumnType("bigint");
+
+                    b.Property<long?>("ProfessorID")
+                        .HasColumnType("bigint");
+
+                    b.HasKey("CursoID", "ProfessorID");
+
+                    b.HasIndex("ProfessorID");
+
+                    b.ToTable("CursoProfessor");
+                });
+
+            modelBuilder.Entity("Modelo.Docente.Professor", b =>
+                {
+                    b.Property<long?>("ProfessorID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint")
+                        .UseIdentityColumn();
+
+                    b.Property<string>("Nome")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("ProfessorID");
+
+                    b.ToTable("Professores");
+                });
+
             modelBuilder.Entity("lagrimas.Models.Infra.UsuarioDaAplicacao", b =>
                 {
                     b.Property<string>("Id")
@@ -422,9 +452,30 @@ namespace lagrimas.Migrations
                     b.Navigation("Instituicao");
                 });
 
+            modelBuilder.Entity("Modelo.Docente.CursoProfessor", b =>
+                {
+                    b.HasOne("Modelo.Cadastros.Curso", "Curso")
+                        .WithMany("CursosProfessores")
+                        .HasForeignKey("CursoID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Modelo.Docente.Professor", "Professor")
+                        .WithMany("CursosProfessores")
+                        .HasForeignKey("ProfessorID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Curso");
+
+                    b.Navigation("Professor");
+                });
+
             modelBuilder.Entity("Modelo.Cadastros.Curso", b =>
                 {
                     b.Navigation("CursosDisciplinas");
+
+                    b.Navigation("CursosProfessores");
                 });
 
             modelBuilder.Entity("Modelo.Cadastros.Departamento", b =>
@@ -440,6 +491,11 @@ namespace lagrimas.Migrations
             modelBuilder.Entity("Modelo.Cadastros.Instituicao", b =>
                 {
                     b.Navigation("Departamentos");
+                });
+
+            modelBuilder.Entity("Modelo.Docente.Professor", b =>
+                {
+                    b.Navigation("CursosProfessores");
                 });
 #pragma warning restore 612, 618
         }

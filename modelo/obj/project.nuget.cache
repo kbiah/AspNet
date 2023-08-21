@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "kE0fklBE9AFkPS1ZGhnqhmU2F264eqE75bbFTliBAFAAaWvMBoA/pzC9mcyj0b8KPGdGFGTJ2BV8jCMZhM97pA==",
+  "dgSpecHash": "gLSyjEOjkhmlTMiWDF1ZNuViL80kgNm6nc05gFm5004FoOEUwSvdTA19EWUWcIhBLr+QyWadUDZoOyI+teupXg==",
   "success": true,
-  "projectFilePath": "D:\\Estudos\\lagrimas\\modelo\\Modelo.csproj",
+  "projectFilePath": "D:\\AspNet\\AspNet\\modelo\\Modelo.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\bianca.kerkhoff\\.nuget\\packages\\entityframework\\6.4.4\\entityframework.6.4.4.nupkg.sha512",
     "C:\\Users\\bianca.kerkhoff\\.nuget\\packages\\microsoft.aspnetcore.http.features\\5.0.17\\microsoft.aspnetcore.http.features.5.0.17.nupkg.sha512",
