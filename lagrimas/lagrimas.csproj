@@ -1,0 +1,148 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Areas\Discente\**" />
+    <Compile Remove="NovaPasta1\**" />
+    <Compile Remove="NovaPasta2\**" />
+    <Compile Remove="NovaPasta3\**" />
+    <Compile Remove="NovaPasta\**" />
+    <Content Remove="Areas\Discente\**" />
+    <Content Remove="NovaPasta1\**" />
+    <Content Remove="NovaPasta2\**" />
+    <Content Remove="NovaPasta3\**" />
+    <Content Remove="NovaPasta\**" />
+    <EmbeddedResource Remove="Areas\Discente\**" />
+    <EmbeddedResource Remove="NovaPasta1\**" />
+    <EmbeddedResource Remove="NovaPasta2\**" />
+    <EmbeddedResource Remove="NovaPasta3\**" />
+    <EmbeddedResource Remove="NovaPasta\**" />
+    <None Remove="Areas\Discente\**" />
+    <None Remove="NovaPasta1\**" />
+    <None Remove="NovaPasta2\**" />
+    <None Remove="NovaPasta3\**" />
+    <None Remove="NovaPasta\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="Areas\Discente\Controllers\AcademicoController.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Areas\Discente\Views\Academico\Create.cshtml" />
+    <Content Include="Areas\Discente\Views\Academico\Index.cshtml" />
+    <Content Include="Areas\Discente\Views\_ViewImports.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="EntityFramework" Version="6.4.4" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="5.0.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Session" Version="2.2.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.17" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.1">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="5.0.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.1" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="5.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\lib\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Areas\Discente\Views\Academico\Details.cshtml" />
+    <None Include="Areas\Discente\Views\Academico\Edit.cshtml" />
+    <None Include="wwwroot\images\drops_599508.png" />
+    <None Include="wwwroot\images\franchise_9185648.png" />
+    <None Include="wwwroot\images\mortarboard_1940611.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\modelo\Modelo.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="Areas\Cadastros\Views\_ViewImports.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Areas\Cadastros\Views\Departamento\_PartialDetailsContentCard.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="Areas\Cadastros\Views\Departamento\Create.cshtml" />
+    <_ContentIncludedByDefault Remove="Areas\Cadastros\Views\Departamento\Delete.cshtml" />
+    <_ContentIncludedByDefault Remove="Areas\Cadastros\Views\Departamento\Details.cshtml" />
+    <_ContentIncludedByDefault Remove="Areas\Cadastros\Views\Departamento\Edit.cshtml" />
+    <_ContentIncludedByDefault Remove="Areas\Cadastros\Views\Departamento\Index.cshtml" />
+    <_ContentIncludedByDefault Remove="Areas\Cadastros\Views\Departamento\_PartialDetailsContentCard.cshtml" />
+    <_ContentIncludedByDefault Remove="Areas\Cadastros\Views\Instituicao\Create.cshtml" />
+    <_ContentIncludedByDefault Remove="Areas\Cadastros\Views\Instituicao\Delete.cshtml" />
+    <_ContentIncludedByDefault Remove="Areas\Cadastros\Views\Instituicao\Details.cshtml" />
+    <_ContentIncludedByDefault Remove="Areas\Cadastros\Views\Instituicao\Edit.cshtml" />
+    <_ContentIncludedByDefault Remove="Areas\Cadastros\Views\Instituicao\Index.cshtml" />
+    <_ContentIncludedByDefault Remove="Areas\Cadastros\Views\Instituicao\_ComDepartamentos.cshtml" />
+    <_ContentIncludedByDefault Remove="Areas\Cadastros\Views\Instituicao\_PartialDetailsContentCard.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Areas\Cadastros\Views\Departamento\Create.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Areas\Cadastros\Views\Departamento\Delete.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Areas\Cadastros\Views\Departamento\Details.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Areas\Cadastros\Views\Departamento\Edit.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Areas\Cadastros\Views\Departamento\Index.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Areas\Cadastros\Views\Instituicao\_ComDepartamentos.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Areas\Cadastros\Views\Instituicao\_PartialDetailsContentCard.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Areas\Cadastros\Views\Instituicao\Create.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Areas\Cadastros\Views\Instituicao\Delete.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Areas\Cadastros\Views\Instituicao\Details.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Areas\Cadastros\Views\Instituicao\Edit.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Areas\Cadastros\Views\Instituicao\Index.cshtml" />
+  </ItemGroup>
+
+</Project>
