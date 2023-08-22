@@ -16,12 +16,14 @@ namespace lagrimas.Areas.Cadastros.Controllers
         private readonly IESContext _context;
         private readonly DepartamentoDAL departamentoDAL;
         private readonly InstituicaoDAL instituicaoDAL;
+        private readonly CursoDAL cursoDAL;
 
         public DepartamentoController(IESContext context)
         {
             _context = context;
             instituicaoDAL = new InstituicaoDAL(context);
             departamentoDAL = new DepartamentoDAL(context);
+            cursoDAL = new CursoDAL(context);
         }
 
         public async Task<IActionResult> Index()
@@ -39,7 +41,7 @@ namespace lagrimas.Areas.Cadastros.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Nome, InstituicaoID")] Departamento departamento)
+        public async Task<IActionResult> Create([Bind("Nome,InstituicaoID,")] Departamento departamento)
         {
             try
             {

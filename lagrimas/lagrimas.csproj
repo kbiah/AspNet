@@ -35,8 +35,9 @@
     <Content Include="Areas\Discente\Views\Academico\Create.cshtml" />
 	<Content Include="Areas\Discente\Views\Academico\Details.cshtml" />
     <Content Include="Areas\Discente\Views\Academico\Index.cshtml" />
-	  <Content Include="Areas\Discente\Views\Academico\Edit.cshtml" />
-    <Content Include="Areas\Discente\Views\_ViewImports.cshtml">
+	<Content Include="Areas\Discente\Views\Academico\Edit.cshtml" />
+    <Content Include="Areas\Discente\Views\Academico\Delete.cshtml" />
+	<Content Include="Areas\Discente\Views\_ViewImports.cshtml">
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
@@ -46,6 +47,7 @@
     <PackageReference Include="EntityFramework" Version="6.4.4" />
     <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="5.0.1" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="5.0.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="5.0.1" />
     <PackageReference Include="Microsoft.AspNetCore.Session" Version="2.2.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.17" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.1">
@@ -62,8 +64,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="Areas\Discente\Views\Academico\Details.cshtml" />
-    <None Include="Areas\Discente\Views\Academico\Edit.cshtml" />
     <None Include="wwwroot\images\drops_599508.png" />
     <None Include="wwwroot\images\franchise_9185648.png" />
     <None Include="wwwroot\images\mortarboard_1940611.png" />

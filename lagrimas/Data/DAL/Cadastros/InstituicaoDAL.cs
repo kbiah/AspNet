@@ -2,12 +2,12 @@
     using Microsoft.EntityFrameworkCore;
     using Modelo.Cadastros;
     using lagrimas.Areas.Cadastros;
-    using lagrimas.Areas.Discente;
+using lagrimas.Areas;
     using System.Linq;
     using System.Threading.Tasks;
 
-    namespace lagrimas.Data.DAL.Cadastros
-    {
+namespace lagrimas.Data.DAL.Cadastros
+{
     public class InstituicaoDAL
     {
         private IESContext _context;

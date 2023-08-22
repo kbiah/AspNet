@@ -3,7 +3,7 @@ using Modelo.Discente;
 using System.Linq;
 using System.Threading.Tasks;
 using lagrimas.Areas.Cadastros;
-using lagrimas.Areas.Discente;
+using lagrimas.Areas;
 
 namespace lagrimas.Data.DAL.Discente
 {

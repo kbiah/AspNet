@@ -1,6 +1,6 @@
 using lagrimas.Data;
 using lagrimas.Areas.Cadastros;
-using lagrimas.Areas.Discente;
+using lagrimas.Areas.Docente;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -11,6 +11,7 @@ using lagrimas.Models.Infra;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using System.Configuration;
+using Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation;
 
 namespace lagrimas
 {
@@ -26,9 +27,13 @@ namespace lagrimas
             public void ConfigureServices(IServiceCollection services)
             {
                 services.AddDbContext<IESContext>(options => options.UseSqlServer(Configuration.GetConnectionString("IESConnection")));
-                services.AddControllersWithViews();
+                services.AddControllersWithViews()
+                .AddRazorRuntimeCompilation();
 
-                services.AddIdentity<UsuarioDaAplicacao, IdentityRole>().AddEntityFrameworkStores<IESContext>().AddDefaultTokenProviders();
+                services.AddSession();
+                services.AddDistributedMemoryCache();
+
+            services.AddIdentity<UsuarioDaAplicacao, IdentityRole>().AddEntityFrameworkStores<IESContext>().AddDefaultTokenProviders();
 
                 services.ConfigureApplicationCookie(options =>
                 {
@@ -51,7 +56,6 @@ namespace lagrimas
             //}
 
                 app.UseDeveloperExceptionPage();
-                app.UseDatabaseErrorPage();
 
                 app.UseHttpsRedirection();
 
@@ -61,6 +65,7 @@ namespace lagrimas
 
                 app.UseRouting();
 
+                app.UseSession();
                 app.UseAuthentication();
 
                 app.UseAuthorization();

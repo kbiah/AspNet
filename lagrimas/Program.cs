@@ -38,6 +38,9 @@ namespace Capitulo02
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();
-                });
+                }
+       );
+
+
     }
 }
