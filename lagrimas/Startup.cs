@@ -1,6 +1,6 @@
 using lagrimas.Data;
 using lagrimas.Areas.Cadastros;
-using lagrimas.Areas.Docente;
+using lagrimas.Areas;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;

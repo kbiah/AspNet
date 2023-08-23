@@ -12,8 +12,10 @@ using Microsoft.Extensions.FileProviders;
 using static System.Net.Mime.MediaTypeNames;
 using System.IO;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Authorization;
 
 [Area("Discente")]
+[Authorize]
 public class AcademicoController : Controller
 {
     private readonly IESContext _context;
