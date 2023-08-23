@@ -1,10 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "1WmdMd7JqqT/ErFXC6X+/leu8MwWooZOHuYJiE/7MwXuBh6q2wvxnXprJIGdjrnaTMREVOfvYOAsuMLOGFVFhQ==",
+  "dgSpecHash": "CNTHsxysflT5BMXEjp1XDO55TP3CeIyohpsUo06Qh5X28METis+twDtIyWYZOo39Gg5aQdXK+TnddDDFaxjmkg==",
   "success": true,
   "projectFilePath": "D:\\AspNet\\AspNet\\lagrimas\\lagrimas.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\bianca.kerkhoff\\.nuget\\packages\\entityframework\\6.4.4\\entityframework.6.4.4.nupkg.sha512",
+    "C:\\Users\\bianca.kerkhoff\\.nuget\\packages\\extensions.fluentvalidation.br\\1.0.2\\extensions.fluentvalidation.br.1.0.2.nupkg.sha512",
+    "C:\\Users\\bianca.kerkhoff\\.nuget\\packages\\fluentvalidation\\10.0.4\\fluentvalidation.10.0.4.nupkg.sha512",
     "C:\\Users\\bianca.kerkhoff\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\bianca.kerkhoff\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\5.0.1\\microsoft.aspnetcore.cryptography.internal.5.0.1.nupkg.sha512",
     "C:\\Users\\bianca.kerkhoff\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\5.0.1\\microsoft.aspnetcore.cryptography.keyderivation.5.0.1.nupkg.sha512",

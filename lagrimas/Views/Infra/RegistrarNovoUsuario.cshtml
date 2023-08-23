@@ -12,32 +12,87 @@
     <div class="col-md-4">
     </div>
     <div class="col-md-4">
-        <form asp-route-returnUrl="@ViewData["ReturnUrl"]" method="post">
-            <div asp-validation-summary="All" class="text-danger">
+        <form asp-route-returnUrl="@ViewData["ReturnUrl"]" method="post" id="formulario_cad" class="forms">
+            <div @*asp-validation-summary="All"*@ class="text-danger">
             </div>
             <div class="form-group">
                 <label asp-for="Email"></label>
-                <input asp-for="Email" class="form-control" />
-                <span asp-validation-for="Email" class="text-danger"></span>
+                <input asp-for="Email" class="form-control" id="email" data-val-required="Esse campo é necessário!" />
+                @*<span asp-validation-for="Email" class="text-danger"></span>*@
+                
             </div>
             <div class="form-group">
                 <label asp-for="Password"></label>
-                <input asp-for="Password" class="form-control" />
-                <span asp-validation-for="Password" class="text-danger"></span>
+                <input asp-for="Password" class="form-control" id="Password" data-val-required="Esse campo é necessário!" />
+               @* <span asp-validation-for="Password" class="text-danger"></span>*@
             </div>
             <div class="form-group">
                 <label asp-for="ConfirmPassword"></label>
-                <input asp-for="ConfirmPassword" class="form-control" />
-                <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+                <input asp-for="ConfirmPassword" class="form-control" id="ConfirmPassword" data-val-required="Esse campo é necessário!" />
+                @*<span asp-validation-for="ConfirmPassword" class="text-danger"></span>*@
             </div>
-            <button type="submit" class="btn btn-default">
+            <button type="submit" class="btn btn-default" onclick="return (br())">
                 Registrar
             </button>
         </form>
     </div>
     <div class="col-md-4">
     </div>
+
+    <script src="~/lib/jquery-validate/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validate/jquery.validate.pt-br.js"></script>
+
+    <script>
+
+        function br() {
+            if (document.forms.email.value.length == 0) {
+                alert('Por favor, informe o seu email.');
+                document.formulario_cad.email.focus();
+                return false;
+            }
+            return true;
+
+            if (document.forms.password.value.length == 0) {
+                alert('Por favor, informe sua senha.');
+                document.formulario_cad.senha.focus();
+                return false;
+            }
+            return true;
+
+            if (document.forms.ConfirmPassword.value.length == 0) {
+                alert('Por favor, confirme sua senha.');
+                document.frmEnvia.confirmpassword.focus();
+                return false;
+            }
+             return true;
+
+            $("#formulario_cad").validate({
+                rules: {
+                    Email: {
+                        required: true
+                    },
+                    Password: {
+                        required: true
+                    },
+                    ConfirmPassword: {
+                        required: true
+                    }
+                },
+                messages: {
+                    Email: {
+                        required: "É necessário informar um email"
+                    },
+                    Password: {
+                        required: "A senha não pode ficar em branco"
+                    },
+                    ConfirmPassword: {
+                        required: "A senha não pode ficar em branco"
+                    }
+                }
+            });
+        }
+    </script>
 </div>
-@section ScriptPage {
+@*@section ScriptPage {
     @await Html.PartialAsync("_ValidationScriptsPartial")
-}
+}*@
