@@ -1,11 +1,14 @@
 ﻿ using Microsoft.AspNetCore.Identity;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Security.Principal;
 using System.Xml.Linq;
 
 namespace lagrimas.Models.Infra
 {
-     public class UsuarioDaAplicacao : IdentityUser
+
+    [Table("AspNetUsers")]
+    public class UsuarioDaAplicacao : IdentityUser
         {
         }
 }

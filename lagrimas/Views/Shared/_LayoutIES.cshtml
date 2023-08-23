@@ -46,7 +46,7 @@
         <div class="col-6">
             @if (SignInManager.IsSignedIn(User))
             {
-                <div>Olá @UserManager.GetUserName(User), seja bem-vindo(a) / @Html.ActionLink("Logout", "Sair", "Infra", new { area = "" })</div>
+                <div>Olá @UserManager.GetUserName(User), seja bem-vindo(a) / @Html.ActionLink("Sair", "Sair", "Infra", new { area = "" })</div>
             }
             else
             {
@@ -93,7 +93,7 @@
     </div>
 
     <nav class="navbar fixed-bottom" style="background-color: #e3f2fd; margin-top:20px;">
-        “A few people laughed, a few people cried, most people were silent.” 
+        Bianca 
     </nav>
     <environment include="Development">
         <script src="~/lib/jquery/jquery.slim.min.js"></script>
