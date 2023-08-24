@@ -13,25 +13,25 @@
     </div>
     <div class="col-md-4">
         <form asp-route-returnUrl="@ViewData["ReturnUrl"]" method="post" id="formulario_cad" class="forms">
-            <div @*asp-validation-summary="All"*@ class="text-danger">
+            <div asp-validation-summary="All" class="text-danger">
             </div>
             <div class="form-group">
                 <label asp-for="Email"></label>
-                <input asp-for="Email" class="form-control" id="email" data-val-required="Esse campo é necessário!" />
-                @*<span asp-validation-for="Email" class="text-danger"></span>*@
+                <input asp-for="Email" class="form-control" id="email" data-val-required="Esse campo é necessário!"required />
+                <span asp-validation-for="Email" class="text-danger"></span>
                 
             </div>
             <div class="form-group">
                 <label asp-for="Password"></label>
-                <input asp-for="Password" class="form-control" id="Password" data-val-required="Esse campo é necessário!" />
-               @* <span asp-validation-for="Password" class="text-danger"></span>*@
+                <input asp-for="Password" class="form-control" id="Password" data-val-required="Esse campo é necessário!" required />
+                <span asp-validation-for="Password" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="ConfirmPassword"></label>
-                <input asp-for="ConfirmPassword" class="form-control" id="ConfirmPassword" data-val-required="Esse campo é necessário!" />
-                @*<span asp-validation-for="ConfirmPassword" class="text-danger"></span>*@
+                <input asp-for="ConfirmPassword" class="form-control" id="ConfirmPassword" data-val-required="Esse campo é necessário!" required />
+                <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
             </div>
-            <button type="submit" class="btn btn-default" onclick="return (br())">
+            <button type="submit" class="btn btn-default" @*onclick="return br()"*@>
                 Registrar
             </button>
         </form>
@@ -40,28 +40,28 @@
     </div>
 
     <script src="~/lib/jquery-validate/jquery.validate.min.js"></script>
-    <script src="~/lib/jquery-validate/jquery.validate.pt-br.js"></script>
+   <script src="~/lib/jquery-validate/jquery.validate.pt-br.js"></script>
 
-    <script>
+  @*  <script>*@
 
-        function br() {
-            if (document.forms.email.value.length == 0) {
+       @* function br() {
+            if (document.forms.email.value == null) {
                 alert('Por favor, informe o seu email.');
                 document.formulario_cad.email.focus();
                 return false;
             }
             return true;
 
-            if (document.forms.password.value.length == 0) {
+            if (document.forms.password.value == null) {
                 alert('Por favor, informe sua senha.');
                 document.formulario_cad.senha.focus();
                 return false;
             }
             return true;
 
-            if (document.forms.ConfirmPassword.value.length == 0) {
+            if (document.forms.ConfirmPassword.value == null) {
                 alert('Por favor, confirme sua senha.');
-                document.frmEnvia.confirmpassword.focus();
+                document.formulario_envia.confirmpassword.focus();
                 return false;
             }
              return true;
@@ -89,9 +89,9 @@
                         required: "A senha não pode ficar em branco"
                     }
                 }
-            });
-        }
-    </script>
+            });*@
+        
+    @*</script>*@
 </div>
 @*@section ScriptPage {
     @await Html.PartialAsync("_ValidationScriptsPartial")
