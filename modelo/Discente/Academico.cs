@@ -12,16 +12,16 @@ namespace Modelo.Discente
 
         [StringLength(10, MinimumLength = 10)]
         [RegularExpression("([0-9]{10})")]
-        [Required]
-        [DisplayName("RA")]
+        [Required(ErrorMessage = "Preencha esse campo!")]
+        [DisplayName("Número do RA")]
         public string RegistroAcademico { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Preencha esse campo!")]
         public string Nome { get; set; }
 
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:dd-MM-yyyy}")]
-        [Required]
+        [Required(ErrorMessage = "Preencha esse campo!")]
         public DateTime? Nascimento { get; set; }
         public string FotoMimeType { get; set; }
         public byte[] Foto { get; set; }

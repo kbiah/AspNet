@@ -29,15 +29,18 @@
 <body>
     <nav class="navbar navbar-light bg-primary navbar-fixed-top">
         <div class="container-fluid">
-            <div class="row">
-                <div class="navbar-header">
-                    <img class="media-heading" src="~/images/drops_599508.png" width="30" height="30" alt="">
+            <div class="col-6"> <a asp-controller="Home" asp-action="Index">
+                <div class="row">
+                    <div class="navbar-header">
+                        <img class="media-heading" src="~/images/drops_599508.png" width="30" height="30" alt="">
+                    </div>
+                    <div>
+                        <ul class="nav navbar-nav navbar-light">
+                            <li class="navbar-brand">&nbsp; Lagrimas.Net</li>
+                        </ul>
+                    </div>
                 </div>
-                <div>
-                    <ul class="nav navbar-nav navbar-light">
-                        <li class="navbar-brand">&nbsp; Lagrimas.Net</li>
-                    </ul>
-                </div>
+                </a>
             </div>
         </div>
     </nav>
@@ -51,7 +54,7 @@
             else
             {
                 <a class="nav-item nav-link" asp-area="" asp-controller="Infra" asp-action="Acessar">
-                    Informar usuário/senha para acessar
+                    Informar usuário para acessar
                 </a>
             }
         </div>
@@ -86,7 +89,7 @@
                     </div>
                 </nav>
             </div>
-            <div class="col-9">
+            <div class="col-9" style="height:auto">
                 @RenderBody()
             </div>
         </div>

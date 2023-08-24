@@ -4,7 +4,7 @@
     Layout = "~/Views/Shared/_LayoutIES.cshtml";
 }
 
-<div class="card-header text-white bg-secondary text-center h1">Utilize uma conta local para acessar</div>
+<div class="card-header text-white bg-warning text-center h3">Utilize uma conta local para acessar</div>
 <div class="row">
     <div class="col-md-4">
     </div>
@@ -13,6 +13,7 @@
             <form asp-route-returnurl="@ViewData["ReturnUrl"]" method="post">
                 <div asp-validation-summary="All" class="text-danger"></div>
                 <div class="form-group">
+                    <br /><br />
                     <label asp-for="Email"></label>
                     <input asp-for="Email" class="form-control" />
                     <span asp-validation-for="Email" class="text-danger"></span>
@@ -34,7 +35,7 @@
                 </div>
 
                 <div class="form-group">
-                    <button type="submit" class="btn btn-default">
+                    <button type="submit" class="btn btn-warning">
                         Acessar
                     </button>
                 </div>
