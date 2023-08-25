@@ -6,7 +6,7 @@
 }
 
 <div class="card-block">
-    <div class="card-header text-white bg-danger text-center h1">Registrando uma nova instituição</div>
+    <div class="card-header text-white bg-success text-center h3">Registrando uma nova instituição</div>
     <div class="card-body">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
@@ -21,14 +21,14 @@
                 <span asp-validation-for="Endereco" class="text-danger"></span>
             </div>
             <div class="form-group text-center h3">
-                <input type="submit" value="Registrar Instituição" class="btn btn-light" />
-                <a asp-action="Index" class="btn btn-info">Retornar à listagem de instituições</a>
+                <a asp-action="Index" class="btn btn-success-subtle">Retornar à listagem de instituições</a>
+                <input type="submit" value="Registrar Instituição" class="btn btn-success" />
             </div>
         </form>
     </div>
-    <div class="card-footer bg-dark text-center text-white">
+    @*<div class="card-footer bg-dark text-center text-white">
         Informe os dados acima e/ou clique em um dos botões de ação
-    </div>
+    </div>*@
 </div>
 
 @section ScriptPage {

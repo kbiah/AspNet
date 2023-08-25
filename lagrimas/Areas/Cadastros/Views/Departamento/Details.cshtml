@@ -9,7 +9,7 @@
 }
 
 <div class="card-block">
-    <div class="card-header text-white bg-secondary text-center h1">Exibindo uma departamento existente</div>
+    <div class="card-header text-white bg-warning text-center h3">Exibindo uma departamento existente</div>
     <div class="card-body">
         <div class="form-group">
             <label asp-for="DepartamentoID" class="control-label"></label>
@@ -38,8 +38,8 @@
             </div>
         </div>
     </div>
-    <div class="card-footer bg-info text-center text-white">
+    <div class="card-footer bg-transparent text-center text-white">
+        <a asp-action="Index" class="btn btn-warning-subtle">Retornar à listagem de departamentos</a>
         <a asp-action="Edit" class="btn btn-warning" asp-route-id="@Model.DepartamentoID">Alterar</a> |
-        <a asp-action="Index" class="btn btn-warning">Retornar à listagem de departamentos</a>
     </div>
 </div>

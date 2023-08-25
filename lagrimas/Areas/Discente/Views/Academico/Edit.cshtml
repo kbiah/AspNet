@@ -6,7 +6,7 @@
 }
 
 <div class="card-block">
-    <div class="card-header text-white bg-success text-center h3">
+    <div class="card-header text-white bg-warning text-center h3">
         Alterando um acadêmico existente
     </div>
     <div class="card-body">
@@ -47,10 +47,8 @@
                 </form>
             </div>
             <div class="form-group text-center h3">
-                <input type="submit" value="Atualizar Acadêmico" class="btn btn-body-secondary" />
-                <a asp-action="Index" class="btn btn-success">
-                    Retornar à listagem de acadêmicos
-                </a>
+                <a asp-action="Index" class="btn btn-warning-subtle">Retornar à listagem de acadêmicos</a>
+                <input type="submit" value="Atualizar Acadêmico" class="btn btn-warning" />
             </div>
         </form>
     </div>

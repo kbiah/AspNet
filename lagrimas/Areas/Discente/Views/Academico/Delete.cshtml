@@ -4,8 +4,7 @@
     ViewData["Title"] = "Delete";
     Layout = "~/Views/Shared/_LayoutIES.cshtml";
 }
-
-<h3>Você tem certeza que deseja apagar o acadêmico?</h3>
+<div class="card-header text-white bg-danger text-center h3">Apagar um acadêmico</div>
 <div>
     <hr />
     <dl class="row">
@@ -31,7 +30,7 @@
     
     <form asp-action="Delete">
         <input type="hidden" asp-for="AcademicoID" />
-        <a asp-action="Index">Voltar para a lista</a>
+        <a asp-action="Index" class="btn btn-danger-subtle">Voltar para a lista</a>
         <input type="submit" value="Delete" class="btn btn-danger" /> 
     </form>
 </div>
