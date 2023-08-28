@@ -26,27 +26,60 @@
     @RenderSection("Styles", required: false)
 </head>
 
-<body>
-    <nav class="navbar navbar-light bg-primary navbar-fixed-top">
-        <div class="container-fluid">
-            <div class="col-6"> <a asp-controller="Home" asp-action="Index">
-                <div class="row">
-                    <div class="navbar-header">
-                        <img class="media-heading" src="~/images/drops_599508.png" width="30" height="30" alt="">
-                    </div>
-                    <div>
-                        <ul class="nav navbar-nav navbar-light">
-                            <li class="navbar-brand">&nbsp; Lagrimas.Net</li>
-                        </ul>
-                    </div>
+    <body>
+    <div class="header">
+       <div class="container">
+           <div class="row">
+               <div class="col-sm-4 p-0" style="background-color:rgb(255, 255, 255); height:auto">
+                   <a class="navbar-brand text-dark" asp-area="" asp-controller="Home" asp-action="Index">
+                       <img src="~/images/drops_599508.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+                            Lagrimas.Net
+                        </a>
+               </div>
+           </div>
+       </div>
+    </div>
+
+    <div class="container">
+            <div class="row" style="background-color:#5E6EAC">
+            <div class="col-xl-12">
+                    <nav class="navigation navbar navbar-expand-md navbar-dark" >
+                        <div class="collapse navbar-collapse" id="navbarsExample04">
+                            <ul class="navbar-nav mr-auto">
+                                <li class="nav-item active">
+                                    <a class="navbar-brand text-white" asp-area="" asp-controller="Home" asp-action="Index">
+                                        Início
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-item nav-link text-white" asp-area="Cadastros" asp-controller="Instituicao" asp-action="Index">
+                                    Instituições</a>
+                                </li>
+                                 <li class="nav-item">
+                                    <a class="nav-item nav-link text-white" asp-area="Cadastros" asp-controller="Departamento" asp-action="Index">
+                                    Departamentos</a>
+                                  </li>
+                                 <li class="nav-item">
+                                    <a class="nav-item nav-link text-white" asp-area="Discente" asp-controller="Academico" asp-action="Index">
+                                       Academicos
+                                      </a>
+                                 </li>
+                                 <li class="nav-item">
+                                    <a class="nav-item nav-link text-white" asp-area="Docente" asp-controller="Professor" asp-action="AdicionarProfessor">
+                                      Professores
+                                      </a>
+                                 </li>
+                            </ul>
+                        </div>
+                    </nav>
                 </div>
-                </a>
             </div>
         </div>
-    </nav>
+        <!-- end header -->
+
     <div class="row" style="text-align:right;">
         <div class="col-6"></div>
-        <div class="col-6">
+        <div class="col-5">
             @if (SignInManager.IsSignedIn(User))
             {
                 <div>Olá @UserManager.GetUserName(User), seja bem-vindo(a) / @Html.ActionLink("Sair", "Sair", "Infra", new { area = "" })</div>
@@ -58,12 +91,17 @@
                 </a>
             }
         </div>
+        <div class="col-1"></div>
     </div>
+    <center>
+        <div class="col-12" style="height:auto">
+            @RenderBody()
+        </div>
+    </center>
 
-
-    <div class="container" style="margin-top: 20px;">
+   @* <div class="container" style="margin-top: 20px;">
         <div class="row">
-            <div class="col-3">
+            <div class="col-12">
                 <nav class="nav flex-column bg-transparent" style="margin-left:40px;">
                     <div class="row">
                         <a class="nav-item nav-link" asp-area="Cadastros" asp-controller="Instituicao" asp-action="Index">
@@ -89,11 +127,11 @@
                     </div>
                 </nav>
             </div>
-            <div class="col-9" style="height:auto">
+            <div class="col-12" style="height:auto">
                 @RenderBody()
             </div>
         </div>
-    </div>
+    </div>*@
 
     <nav class="navbar fixed-bottom" style="background-color: #e3f2fd; margin-top:20px;">
         Bianca 
