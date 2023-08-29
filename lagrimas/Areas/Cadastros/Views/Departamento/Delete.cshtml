@@ -8,40 +8,41 @@
     <link rel="stylesheet" href="~/lib/font-awesome/css/font-awesome.min.css" />
 }
 
-<div class="card-block">
-    <div class="card-header text-white bg-danger text-center h3">Deletar um departamento</div>
-
-    @{
-        await Html.RenderPartialAsync("~/Areas/Cadastros/Views/Departamento/_PartialDetailsContentCard.cshtml", Model);
-        }
-
-    <div class="card-footer bg-transparent text-center text-white">
-        <a asp-action="Index" class="btn btn-danger-subtle">Retornar à listagem de Departamentos</a>
-        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalConfirmationDelete">
-            Remover Departamento
-        </button>
+<div class="card-block" style="padding-left:4rem; padding-right:4rem">
+    <div class="card-header text-white text-center h3" style="background-color:#5E6EAC">
+        Deletar um departamento
     </div>
+
+    @{ await Html.RenderPartialAsync("~/Areas/Cadastros/Views/Departamento/_PartialDetailsContentCard.cshtml", Model);}
+
+     <div class="card-footer bg-transparent text-center text-white">
+         <a asp-action="Index" class="btn">Retornar à listagem de Departamentos</a>
+         <button type="button" class="btn text-white" data-toggle="modal" data-target="#modalConfirmationDelete" style="background-color:#5E6EAC">
+            Remover Departamento
+         </button>
+     </div>
 </div>
 
-<div class="modal fade" id="modalConfirmationDelete" tabindex="-1" role="dialog" aria-labelledby="deleteModal" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="deleteModal">Remoção de Departamento</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <p>Confirma a exclusão do departamento @Model.Nome.ToUpper() ????????? :O </p>
-            </div>
-            <div class="modal-footer">
-                <form asp-action="Delete">
-                    <input type="hidden" asp-for="DepartamentoID" />
-                    <button type="button" class="btn btn-danger-subtle" data-dismiss="modal">Fechar</button>
-                    <input type="submit" value="Remover Departamento" class="btn btn-danger" />
-                </form>
+            @*MODAL*@
+    <div class="modal fade" id="modalConfirmationDelete" tabindex="-1" role="dialog" aria-labelledby="deleteModal" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="deleteModal">Remoção de Departamento</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Confirma a exclusão do departamento @Model.Nome.ToUpper()?</p>
+                </div>
+                <div class="modal-footer">
+                    <form asp-action="Delete">
+                        <input type="hidden" asp-for="DepartamentoID" />
+                        <button type="button" class="btn btn-transparent" data-dismiss="modal">Fechar</button>
+                        <input type="submit" value="Remover Departamento" class="btn btn-danger" />
+                    </form>
+                </div>
             </div>
         </div>
     </div>
-</div>

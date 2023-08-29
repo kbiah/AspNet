@@ -16,9 +16,10 @@
     </environment>
 }
 
-<div class="card-block">
-    <div class="card-header text-white bg-warning text-center h3">Exibindo um acadêmico existente</div>
-
+<div class="card-block" style="padding-left:4rem; padding-right:4rem">
+    <div class="card-header text-white text-center h3" style="background-color:#5E6EAC">
+        Exibindo um acadêmico existente
+    </div>
     <div class="card-body">
         <div class="row">
             <div class="col-9">
@@ -71,8 +72,8 @@
             </div>
         </div>
     </div>
-    <div class="card-footer bg-transparent text-center text-white">
-        <a asp-action="Index" class="btn btn-warning-subtle">Retornar à listagem de acadêmicos</a>
-        <a asp-action="Edit" class="btn btn-warning" asp-route-id="@Model.AcademicoID">Alterar</a> 
+    <div class="card-footer text-center text-white">
+        <a asp-action="Index" class="btn btn-transparent">Retornar à listagem de acadêmicos</a>
+        <a asp-action="Edit" class="btn text-white" asp-route-id="@Model.AcademicoID" style="background-color:#5E6EAC">Alterar</a>
     </div>
 </div>

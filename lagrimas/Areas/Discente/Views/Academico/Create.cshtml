@@ -3,8 +3,8 @@
     Layout = "_LayoutIES";
 }
 
-<div class="card-block">
-    <div class="card-header text-white bg-success text-center h3">Registrando um novo acadêmico</div>
+<div class="card-block" style="padding-left:4rem; padding-right:4rem">
+    <div class="card-header text-white text-center h3" style="background-color:#5E6EAC">Registrando um novo acadêmico</div>
     <div class="card-body">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
@@ -24,11 +24,11 @@
                 <span asp-validation-for="Nascimento" class="text-danger"></span>
             </div>
             <div class="form-group text-center h3">
-                <a asp-action="Index" class="btn btn-success-subtle">Retornar à listagem de acadêmicos</a>
-                <input type="submit" value="Registrar Acadêmico" class="btn btn-success" />
+                <a asp-action="Index" class="btn btn-transparent">Retornar à listagem de acadêmicos</a>
+                <input type="submit" value="Registrar Acadêmico" class="btn text-white" style="background-color:#5E6EAC" />
             </div>
         </form>
-    </div>
+    </div> <br /><br />
     @*<div class="card-footer bg-dark text-center text-white">
         Informe os dados acima e/ou clique em um dos botões de ação
     </div>*@

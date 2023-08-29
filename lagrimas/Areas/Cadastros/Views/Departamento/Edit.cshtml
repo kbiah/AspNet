@@ -4,8 +4,8 @@
 Layout = "_LayoutIES";
 }
 
-<div class="card-block">
-    <div class="card-header text-white bg-warning text-center h3">Alterando um departamento existente</div>
+<div class="card-block" style="padding-left:4rem; padding-right:4rem">
+    <div class="card-header text-white text-center h3" style="background-color:#5E6EAC">Alterando um departamento existente</div>
     <div class="card-body">
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
@@ -22,8 +22,8 @@ Layout = "_LayoutIES";
             </div>
 
             <div class="form-group text-center h3">
-                <a asp-action="Index" class="btn btn-warning-subtle">Retornar à listagem de departamentos</a>
-                <input type="submit" value="Atualizar Departamento" class="btn btn-warning" />
+                <a asp-action="Index" class="btn btn-transparent">Retornar à listagem de departamentos</a>
+                <input type="submit" value="Atualizar Departamento" class="btn text-white" style="background-color:#5E6EAC" />
             </div>
         </form>
     </div>

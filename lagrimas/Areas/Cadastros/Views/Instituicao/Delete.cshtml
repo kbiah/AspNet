@@ -15,16 +15,16 @@
     </environment>
 }
 
-<div class="card-block">
-    <div class="card-header text-white bg-danger text-center h3">Apagar uma Instituição</div>
+<div class="card-block" style="padding-left:4rem; padding-right:4rem">
+    <div class="card-header text-white text-center h3" style="background-color:#5E6EAC">Apagar uma Instituição</div>
 
    @{await Html.RenderPartialAsync("~/Areas/Cadastros/Views/Instituicao/_PartialDetailsContentCard.cshtml", Model); }
 
     <div class="card-footer bg-transparent text-center text-white">
         <form asp-action="Delete">
             <input type="hidden" asp-for="InstituicaoID" />
-            <a asp-action="Index" class="btn btn-danger-subtle">Retornar à listagem de instituições</a>
-            <input type="submit" value="Remover Instituição" class="btn btn-danger" />
+            <a asp-action="Index" class="btn btn-transparent">Retornar à listagem de instituições</a>
+            <input type="submit" value="Remover Instituição" class="btn text-white" style="background-color:#5E6EAC" />
         </form>
     </div>
 </div>

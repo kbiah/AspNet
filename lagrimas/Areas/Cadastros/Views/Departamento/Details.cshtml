@@ -8,8 +8,8 @@
     <link rel="stylesheet" href="~/lib/font-awesome/css/font-awesome.min.css" />
 }
 
-<div class="card-block">
-    <div class="card-header text-white bg-warning text-center h3">Exibindo uma departamento existente</div>
+<div class="card-block" style="padding-left:4rem; padding-right:4rem">
+    <div class="card-header text-white text-center h3" style="background-color:#5E6EAC">Exibindo uma departamento existente</div>
     <div class="card-body">
         <div class="form-group">
             <label asp-for="DepartamentoID" class="control-label"></label>
@@ -38,8 +38,8 @@
             </div>
         </div>
     </div>
-    <div class="card-footer bg-transparent text-center text-white">
-        <a asp-action="Index" class="btn btn-warning-subtle">Retornar à listagem de departamentos</a>
-        <a asp-action="Edit" class="btn btn-warning" asp-route-id="@Model.DepartamentoID">Alterar</a> |
+    <div class="card-footer text-center text-white">
+        <a asp-action="Index" class="btn btn-transparent">Retornar à listagem de departamentos</a>
+        <a asp-action="Edit" class="btn text-white" style="background-color:#5E6EAC" asp-route-id="@Model.DepartamentoID">Alterar</a> |
     </div>
 </div>
