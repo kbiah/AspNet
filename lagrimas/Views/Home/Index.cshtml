@@ -6,35 +6,34 @@
 
 <img src="~/images/index_aluno.jpg" class="img-fluid" alt="imagem garota index" width="900" height="auto">
 <br /><br />
-<div class="col-1"></div>
-<div class="col-10">  @*aqui as caixas embaixo da imagem no index*@
+<div class="col-12">  @*aqui as caixas embaixo da imagem no index*@
     <div class="six_box">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-md-3">
-                    <div class="six_probpx" style="background-color:#5E6EAC; height: 12rem; width:auto;"> <br />
-                        <a class="text-black" asp-area="cadastros" asp-controller="Instituicao" asp-action="Index" style="font-size:larger">
-                        <img src="~/images/mortarboard_1940611.png" style="height:40%; padding-top:1rem " ><br /> Instituições </a>
-                    </div>
-                </div>
-                <div class="col-md-3">
+                <div class="col-md-3 border ">
                     <div class="six_probpx bg-white" style=" height: 12rem; width:auto;"><br />
                         <a class="text-dark" asp-area="cadastros" asp-controller="Departamento" asp-action="Index" style="font-size:larger">
                             <img src="~/images/franchise_9185648.png" style="height:40%; padding-top:1rem"><br /> Departamentos
                         </a>
                     </div>
                 </div>
-                <div class="col-md-3">
-                    <div class="six_probpx" style="background-color:#5E6EAC; height: 12rem; width:auto;"><br />
-                        <a class="text-black" asp-area="discente" asp-controller="Academico" asp-action="Index" style="font-size:larger">
-                            <img src="~/images/mesa-do-professor.png" style="height:40%; padding-top:1rem"><br /> Acadêmicos
-                        </a>
+                <div class="col-md-3 border" style="background-color:#5E6EAC">
+                    <div class="six_probpx" style=" height: 12rem; width:auto;"> <br />
+                        <a class="text-dark" asp-area="cadastros" asp-controller="Instituicao" asp-action="Index" style="font-size:larger">
+                        <img src="~/images/aluno.png" style="height:40%; padding-top:1rem " ><br /> Instituições </a>
                     </div>
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-3 border">
                     <div class="six_probpx bg-white" style="height: 12rem; width:auto;"><br />
                         <a class="text-dark" asp-area="Docente" asp-controller="Professor" asp-action="Index" style="font-size:larger">
                             <img src="~/images/mortarboard_1940611.png" style="height:40%; padding-top:1rem "><br /> Professores
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-3 border" style="background-color:#5E6EAC">
+                    <div class="six_probpx" style="height: 12rem; width:auto;"><br />
+                        <a class="text-dark" asp-area="discente" asp-controller="Academico" asp-action="Index" style="font-size:larger">
+                            <img src="~/images/mesa-do-professor.png" style="height:40%; padding-top:1rem"><br /> Acadêmicos
                         </a>
                     </div>
                 </div>
@@ -42,5 +41,4 @@
         </div>
     </div>
 </div>
-<div class="col-1"></div>
     <br><br><br>
