@@ -1,15 +1,59 @@
 ﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
 for details on configuring this project to bundle and minify static web assets. */
 
-a.navbar-brand {
-  white-space: normal;
-  text-align: center;
-  word-break: break-all;
+.btn-b {
+    background-color: #5E6EAC;
 }
+
+.card-block {
+    height: auto;
+    padding-left: 4rem;
+    padding-right: 4rem;
+}
+
+.card-header {
+    height:auto;
+    background-color: #5E6EAC;
+}
+
+a.navbar-brand {
+    white-space: normal;
+    text-align: center;
+    word-break: break-all;
+}
+
+.img-thumbnail {
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.container-fluid {
+    padding: 0;
+
+}
+
+.col-sm-4 p-0 {
+    background-color:rgb(255, 255, 255);
+    height:auto;
+}
+
+.col-12 {
+    height:auto;
+}
+
+.six_probpx {
+    height: 12rem;
+    width: auto;
+}
+
+
+
+
 
 /* Provide sufficient contrast against white background */
 a {
-  color: #0366d6;
+    color: #0366d6;
 }
 
 .btn-primary {

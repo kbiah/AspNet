@@ -24,12 +24,15 @@
     </environment>
 
     @RenderSection("Styles", required: false)
+
+    <link rel="stylesheet" href="~/css/site.css">
 </head>
+
 <body>
     <div class="header">
        <div class="container">
            <div class="row">
-               <div class="col-sm-4 p-0" style="background-color:rgb(255, 255, 255); height:auto">
+               <div class="col-sm-4 p-0">
                    <a class="navbar-brand text-dark" asp-area="" asp-controller="Home" asp-action="Index">
                        <img src="~/images/drops_599508.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
                             Lagrimas.Net
@@ -39,7 +42,7 @@
        </div>
     </div>
 
-    <div class="container-fluid" style="padding: 0;">
+    <div class="container-fluid">
         <div class="row" style="background-color:#5E6EAC; margin: 0;">
             <div class="col-12" style="padding: 0;">
                 <nav class="navigation navbar navbar-expand navbar-dark" >
@@ -111,7 +114,7 @@
     </div>
     <br />
     <center>
-        <div class="col-12" style="height:auto">
+        <div class="col-12">
             @RenderBody()
         </div>
     </center>

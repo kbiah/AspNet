@@ -3,8 +3,12 @@
     Layout = "_LayoutIES";
 }
 
-<div class="card-block" style="padding-left:4rem; padding-right:4rem">
-    <div class="card-header text-white text-center h3" style="background-color:#5E6EAC">Registrando um novo acadêmico</div>
+<head>
+    <link rel="stylesheet" href="~/css/site.css">
+</head>
+
+<div class="card-block">
+    <div class="card-header text-white text-center h3">Registrando um novo acadêmico</div>
     <div class="card-body">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
@@ -25,7 +29,7 @@
             </div>
             <div class="form-group text-center h3">
                 <a asp-action="Index" class="btn btn-transparent">Retornar à listagem de acadêmicos</a>
-                <input type="submit" value="Registrar Acadêmico" class="btn text-white" style="background-color:#5E6EAC" />
+                <input type="submit" value="Registrar Acadêmico" class="btn text-white btn-b"/>
             </div>
         </form>
     </div> <br /><br />

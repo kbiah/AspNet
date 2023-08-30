@@ -4,10 +4,15 @@
     ViewData["Title"] = "Delete";
     Layout = "~/Views/Shared/_LayoutIES.cshtml";
 }
-<div class="card-header text-white text-center h3" style="background-color:#5E6EAC; padding-left:4rem; padding-right:4rem">
-    Apagar um acadêmico
-</div>
-<div>
+
+<head>
+    <link rel="stylesheet" href="~/css/site.css">
+</head>
+
+<div class="card-block">
+    <div class="card-header text-white text-center h3">
+        Exibindo um acadêmico existente
+    </div>
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
@@ -33,6 +38,6 @@
     <form asp-action="Delete">
         <input type="hidden" asp-for="AcademicoID" />
         <a asp-action="Index" class="btn btn-transparent">Voltar para a lista</a>
-        <input type="submit" value="Delete" class="btn text-white" style="background-color:#5E6EAC" />
+        <input type="submit" value="Delete" class="btn text-white btn-b"/>
     </form>
 </div>

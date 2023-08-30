@@ -14,9 +14,12 @@
         @TempData["Message"]
     </div>
 }
+<head>
+    <link rel="stylesheet" href="~/css/site.css">
+</head>
 
-<div class="col-sm-12 card-block" style="padding-left:4rem; padding-right:4rem">
-    <div class="card-header text-white text-center h3" style="background-color:#5E6EAC">Departamentos Registrados</div>
+<div class="col-sm-12 card-block">
+    <div class="card-header text-white text-center h3">Departamentos Registrados</div>
     <div class="card-body">
         <table id="tabela_departamentos">
             <thead>
@@ -51,7 +54,7 @@
         </table>
     </div>
     <div class="card-footer text-center">
-        <a asp-action="Create" class="btn text-white" style="background-color:#5E6EAC">Criar um novo departamento</a>
+        <a asp-action="Create" class="btn text-white btn-b">Criar um novo departamento</a>
     </div>
 </div>
 

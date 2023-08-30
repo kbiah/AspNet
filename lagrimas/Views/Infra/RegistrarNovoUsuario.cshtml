@@ -4,8 +4,11 @@
     ViewData["Title"] = "RegistrarNovoUsuario";
     Layout = "_LayoutIES";
 }
+<head>
+    <link rel="stylesheet" href="~/css/site.css">
+</head>
 
-<div class="card-header text-white bg-warning text-center h1">
+<div class="card-header text-white text-center h3" style="padding-left:4rem; padding-right:4rem">
     Registrar uma nova conta de usuário
 </div>
 <div class="row">
@@ -31,7 +34,7 @@
                 <input asp-for="ConfirmPassword" class="form-control" id="ConfirmPassword"  />
                 <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
             </div>
-            <button type="submit" class="btn btn-warning" @*onclick="return br()"*@>
+            <button type="submit" class="btn btn-b" @*onclick="return br()"*@>
                 Registrar
             </button>
         </form>
@@ -93,6 +96,6 @@
         
     @*</script>*@
 </div>
-@*@section ScriptPage {
+@section ScriptPage {
     @await Html.PartialAsync("_ValidationScriptsPartial")
-}*@
+}

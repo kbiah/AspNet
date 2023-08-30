@@ -7,42 +7,44 @@
 <!DOCTYPE html>
 
 <html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Registos</title>
-</head>
-<body>
-    <div class="card-header text-white text-center h3" style="background-color:#5E6EAC; padding-left:4rem; padding-right:4rem">
-        Verificar Ultimos Registros
-    </div>
-    <table class="table">
-        <thead>
-            <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.Curso)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Professor)
-                </th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var item in Model)
-            {
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.CursoID)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.ProfessorID)
-                    </td>
-                </tr>
-            }
-        </tbody>
-    </table>
-    <p>
-        <a asp-action="AdicionarProfessor">Voltar para Adicionar Professor</a>
-    </p>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <title>Registos</title>
+        <link rel="stylesheet" href="~/css/site.css">
+    </head>
 
-</body>
+    <body>
+        <div class="card-header text-white text-center h3" style=" padding-left:4rem; padding-right:4rem">
+            Verificar Ultimos Registros
+        </div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Curso)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Professor)
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.CursoID)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ProfessorID)
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        <p>
+            <a asp-action="AdicionarProfessor">Voltar para Adicionar Professor</a>
+        </p>
+
+    </body>
 </html>

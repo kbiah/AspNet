@@ -5,8 +5,12 @@
     Layout = "~/Views/Shared/_LayoutIES.cshtml";
 }
 
-<div class="card-block" style="padding-left:4rem; padding-right:4rem">
-    <div class="card-header text-white text-center h3" style="background-color:#5E6EAC">
+<head>
+    <link rel="stylesheet" href="~/css/site.css">
+</head>
+
+<div class="card-block">
+    <div class="card-header text-white text-center h3">
         Alterando um acadêmico existente
     </div>
     <div class="card-body">
@@ -35,7 +39,7 @@
                 <input type="file" name="foto" class="form-control" />
             </div>
             <div class="col-3">
-                <img class="img-thumbnail" src="@Url.Action("GetFoto", "Academico", new { id = Model.AcademicoID })" style="display:block; margin-left:auto;margin-right:auto;" />
+                <img class="img-thumbnail" src="@Url.Action("GetFoto", "Academico", new { id = Model.AcademicoID })" />
                 @Html.ActionLink("Download", "DownloadFoto", "Academico", new { id = Model.AcademicoID }, null)
                 <form>
                     <div class="checkbox">
@@ -48,7 +52,7 @@
             </div>
             <div class="form-group text-center h3">
                 <a asp-action="Index" class="btn btn-transparent">Retornar à listagem de acadêmicos</a>
-                <input type="submit" value="Atualizar Acadêmico" class="btn text-white" style="background-color:#5E6EAC" />
+                <input type="submit" value="Atualizar Acadêmico" class="btn text-white btn-b" />
             </div>
         </form>
     </div> <br /><br />

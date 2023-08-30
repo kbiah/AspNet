@@ -5,8 +5,12 @@
     Layout = "~/Views/Shared/_LayoutIES.cshtml";
 }
 
-<div class="card-block" style="padding-left:4rem; padding-right:4rem">
-    <div class="card-header text-white text-center h3" style="background-color:#5E6EAC">Alterando uma instituição existente</div>
+<head>
+    <link rel="stylesheet" href="~/css/site.css">
+</head>
+
+<div class="card-block">
+    <div class="card-header text-white text-center h3">Alterando uma instituição existente</div>
     <div class="card-body">
         <form asp-action="Edit">
             <input type="hidden" asp-for="InstituicaoID" />
@@ -23,7 +27,7 @@
             </div>
             <div class="form-group text-center h3">
                 <a asp-action="Index" class="btn btn-white">Retornar à listagem de instituições</a>
-                <input type="submit" value="Atualizar Instituição" class="btn text-white" style="background-color:#5E6EAC" />
+                <input type="submit" value="Atualizar Instituição" class="btn text-white btn-b" />
             </div>
         </form>
     </div>

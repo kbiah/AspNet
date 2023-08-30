@@ -6,10 +6,11 @@
 
 @section styles {
     <link rel="stylesheet" href="~/lib/font-awesome/css/font-awesome.min.css" />
+   <link rel="stylesheet" href="~/css/site.css">
 }
 
-<div class="card-block" style="padding-left:4rem; padding-right:4rem">
-    <div class="card-header text-white text-center h3" style="background-color:#5E6EAC">
+<div class="card-block">
+    <div class="card-header text-white text-center h3">
         Deletar um departamento
     </div>
 
@@ -17,7 +18,7 @@
 
      <div class="card-footer bg-transparent text-center text-white">
          <a asp-action="Index" class="btn">Retornar à listagem de Departamentos</a>
-         <button type="button" class="btn text-white" data-toggle="modal" data-target="#modalConfirmationDelete" style="background-color:#5E6EAC">
+        <button type="button" class="btn text-white btn-b" data-toggle="modal" data-target="#modalConfirmationDelete">
             Remover Departamento
          </button>
      </div>
