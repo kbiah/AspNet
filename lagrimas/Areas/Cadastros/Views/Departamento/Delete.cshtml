@@ -9,19 +9,28 @@
    <link rel="stylesheet" href="~/css/site.css">
 }
 
-<div class="card-block">
-    <div class="card-header text-white text-center h3">
-        Deletar um departamento
+<div class="row">
+    <div class="col-md-4 d-flex align-items-center justify-content-center">
+        <center>
+            <img src="~/images/livraria-digital.png" class="img-fluid" alt="departamentos" class="img-lado">
+        </center>
     </div>
+    <div class="col-md-8">
+        <div class="card-block">
+            <div class="card-header text-white text-center h3">
+                Deletar um departamento
+            </div>
 
-    @{ await Html.RenderPartialAsync("~/Areas/Cadastros/Views/Departamento/_PartialDetailsContentCard.cshtml", Model);}
+            @{ await Html.RenderPartialAsync("~/Areas/Cadastros/Views/Departamento/_PartialDetailsContentCard.cshtml", Model);}
 
-     <div class="card-footer bg-transparent text-center text-white">
-         <a asp-action="Index" class="btn">Retornar à listagem de Departamentos</a>
-        <button type="button" class="btn text-white btn-b" data-toggle="modal" data-target="#modalConfirmationDelete">
-            Remover Departamento
-         </button>
-     </div>
+             <div class="card-footer bg-transparent text-center text-white">
+                 <a asp-action="Index" class="btn">Retornar à listagem de Departamentos</a>
+                <button type="button" class="btn text-white btn-b" data-toggle="modal" data-target="#modalConfirmationDelete">
+                    Remover Departamento
+                 </button>
+             </div>
+        </div>
+    </div>
 </div>
 
             @*MODAL*@

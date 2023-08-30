@@ -27,53 +27,62 @@
     <link rel="stylesheet" href="~/css/site.css">
 </head>
 
-<div class="card-block">
-    <div class="card-header text-white text-center h3">Instituições Registradas</div>
-        <div class="card-body">
-            <table id="tabela_instituicoes">
-                <thead>
-                    <tr>
-                        <th>
-                            @Html.DisplayNameFor(model => model.InstituicaoID)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.Nome)
-                        </th>
-                        <th>
-                            @Html.DisplayNameFor(model => model.Endereco)
-                        </th>
-                        <th></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach (var item in Model)
-                    {
-                        <tr>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.InstituicaoID)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Nome)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Endereco)
-                            </td>
-                            <td>
-                                <a asp-action="Edit" asp-route-id="@item.InstituicaoID">Edit</a> |
-                                <a asp-action="Details" asp-route-id="@item.InstituicaoID">Details</a> |
-                                <a asp-action="Delete" asp-route-id="@item.InstituicaoID">Delete</a>
-                            </td>
-                        </tr>
-                    }
-                </tbody>
-            </table>
-        </div>
-    <div class="card-footer text-center">
-        <a asp-action="Create" class="btn text-white btn-b">Criar uma nova instituição</a>
+<div class="row">
+    <div class="col-md-4 d-flex align-items-center justify-content-center">
+        <center>
+            <img src="~/images/auto-aprendizagem.png" class="img-fluid" alt="instituições" class="img-lado">
+        </center>
     </div>
-    <br /><br /><br /><br />
+    <div class="col-md-8">
+        <div class="card border-0">
+            <div class="card-header text-white text-center h3">Instituições Registradas</div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table id="tabela_instituicoes" class="table">
+                        <thead>
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.InstituicaoID)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Nome)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Endereco)
+                                </th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.InstituicaoID)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Nome)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Endereco)
+                                    </td>
+                                    <td>
+                                        <a asp-action="Edit" asp-route-id="@item.InstituicaoID">Edit</a> |
+                                        <a asp-action="Details" asp-route-id="@item.InstituicaoID">Details</a> |
+                                        <a asp-action="Delete" asp-route-id="@item.InstituicaoID">Delete</a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="card-footer text-center">
+                <a asp-action="Create" class="btn text-white btn-b">Criar uma nova instituição</a>
+            </div>
+        </div>
+    </div>
 </div>
-
 
 @section ScriptPage {
     <environment include="Development">

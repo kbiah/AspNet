@@ -18,46 +18,58 @@
     <link rel="stylesheet" href="~/css/site.css">
 </head>
 
-<div class="col-sm-12 card-block">
-    <div class="card-header text-white text-center h3">Departamentos Registrados</div>
-    <div class="card-body">
-        <table id="tabela_departamentos">
-            <thead>
-                <tr>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Nome)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Instituicao.Nome)
-                    </th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var item in Model)
-                {
-                    <tr>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Nome)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Instituicao.Nome)
-                        </td>
-                        <td>
-                            <a asp-action="Edit" asp-route-id="@item.DepartamentoID">Edit</a> |
-                            <a asp-action="Details" asp-route-id="@item.DepartamentoID">Details</a> |
-                            <a asp-action="Delete" asp-route-id="@item.DepartamentoID">Delete</a>
-                        </td>
-                    </tr>
-                }
-            </tbody>
-        </table>
+<div class="row">
+    <div class="col-md-4 d-flex align-items-center justify-content-center">
+        <center>
+            <img src="~/images/livraria-digital.png" class="img-fluid" alt="departamentos" class="img-lado">
+        </center>
     </div>
-    <div class="card-footer text-center">
-        <a asp-action="Create" class="btn text-white btn-b">Criar um novo departamento</a>
+    <div class="col-md-8">
+        <div class="col-sm-12 card-block">
+            <div class="card border-0">
+                <div class="card-header text-white text-center h3">Departamentos Registrados</div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table id="tabela_departamentos" class="table">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Nome)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Instituicao.Nome)
+                                    </th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Nome)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Instituicao.Nome)
+                                        </td>
+                                        <td>
+                                            <a asp-action="Edit" asp-route-id="@item.DepartamentoID">Edit</a> |
+                                            <a asp-action="Details" asp-route-id="@item.DepartamentoID">Details</a> |
+                                            <a asp-action="Delete" asp-route-id="@item.DepartamentoID">Delete</a>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="card-footer text-center">
+                    <a asp-action="Create" class="btn text-white btn-b">Criar um novo departamento</a>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
-
 
 @section ScriptPage {
     <script type="text/javascript" src="~/lib/datatables/media/js/jquery.dataTables.min.js"></script>

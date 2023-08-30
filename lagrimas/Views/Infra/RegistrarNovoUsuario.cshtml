@@ -8,39 +8,49 @@
     <link rel="stylesheet" href="~/css/site.css">
 </head>
 
-<div class="card-header text-white text-center h3" style="padding-left:4rem; padding-right:4rem">
-    Registrar uma nova conta de usuário
-</div>
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-4 d-flex align-items-center justify-content-center">
+        <center>
+            <img src="~/images/discussao-on-line (1).png" class="img-fluid" alt="acessar" class="img-lado">
+        </center>
     </div>
-    <div class="col-md-4">
-        <form asp-route-returnUrl="@ViewData["ReturnUrl"]" method="post" id="formulario_cad" class="forms">
-            @*<div asp-validation-summary="All" class="text-danger">*@
-           @* </div>*@
-            <div class="form-group">
-                <label asp-for="Email"></label>
-                <input asp-for="Email" class="form-control" id="email" />
-                <span asp-validation-for="Email" class="text-danger"></span>
+    <div class="col-md-8">
+        <div class="card-header text-white text-center h3" style="padding-left:4rem; padding-right:4rem">
+            Registrar uma nova conta de usuário
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+            </div>
+            <div class="col-md-4">
+                <form asp-route-returnUrl="@ViewData["ReturnUrl"]" method="post" id="formulario_cad" class="forms">
+                    @*<div asp-validation-summary="All" class="text-danger">*@
+                   @* </div>*@
+                    <div class="form-group">
+                        <label asp-for="Email"></label>
+                        <input asp-for="Email" class="form-control" id="email" />
+                        <span asp-validation-for="Email" class="text-danger"></span>
                 
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Password"></label>
+                        <input asp-for="Password" class="form-control" id="Password"  />
+                        <span asp-validation-for="Password" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="ConfirmPassword"></label>
+                        <input asp-for="ConfirmPassword" class="form-control" id="ConfirmPassword"  />
+                        <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+                    </div>
+                    <button type="submit" class="btn btn-b" @*onclick="return br()"*@>
+                        Registrar
+                    </button>
+                </form>
             </div>
-            <div class="form-group">
-                <label asp-for="Password"></label>
-                <input asp-for="Password" class="form-control" id="Password"  />
-                <span asp-validation-for="Password" class="text-danger"></span>
+            <div class="col-md-4">
             </div>
-            <div class="form-group">
-                <label asp-for="ConfirmPassword"></label>
-                <input asp-for="ConfirmPassword" class="form-control" id="ConfirmPassword"  />
-                <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
-            </div>
-            <button type="submit" class="btn btn-b" @*onclick="return br()"*@>
-                Registrar
-            </button>
-        </form>
+        </div>
     </div>
-    <div class="col-md-4">
-    </div>
+</div>
 
     <script src="~/lib/jquery-validate/jquery.validate.min.js"></script>
    <script src="~/lib/jquery-validate/jquery.validate.pt-br.js"></script>
@@ -95,7 +105,7 @@
             });*@
         
     @*</script>*@
-</div>
+
 @section ScriptPage {
     @await Html.PartialAsync("_ValidationScriptsPartial")
 }

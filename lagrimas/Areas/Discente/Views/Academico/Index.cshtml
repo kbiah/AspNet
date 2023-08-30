@@ -25,56 +25,68 @@
     <link rel="stylesheet" href="~/css/site.css">
 </head>
 
-<div class="card-block">
-    <div class="card-header text-white text-center h3">
-        Acadêmicos Registrados</div>
-    <div class="card-body">
-        <table id="tabela_academicos">
-            <thead>
-                <tr>
-                    <th>
-                        @Html.DisplayNameFor(model => model.AcademicoID)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.RegistroAcademico)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Nome)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Nascimento)
-                    </th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var item in Model)
-                {
-                    <tr>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.AcademicoID)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.RegistroAcademico)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Nome)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Nascimento)
-                        </td>
-                        <td>
-                            <a asp-action="Edit" asp-route-id="@item.AcademicoID">Edit</a> |
-                            <a asp-action="Details" asp-route-id="@item.AcademicoID">Details</a> |
-                            <a asp-action="Delete" asp-route-id="@item.AcademicoID">Delete</a>
-                        </td>
-                    </tr>
-                }
-            </tbody>
-        </table>
+<div class="row">
+    <div class="col-md-4 d-flex align-items-center justify-content-center">
+        <center>
+            <img src="~/images/ensino-on-line.png" class="img-fluid" alt="instituições" class="img-lado">
+        </center>
     </div>
-    <div class="card-footer text-center">
-        <a asp-action="Create" class="btn text-white btn-b">Criar um novo acadêmico</a>
+    <div class="col-md-8">
+        <div class="card border-0">
+            <div class="card-header text-white text-center h3">
+                Acadêmicos Registrados
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table id="tabela_academicos" class="table">
+                        <thead>
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.AcademicoID)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.RegistroAcademico)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Nome)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Nascimento)
+                                </th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.AcademicoID)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.RegistroAcademico)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Nome)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Nascimento)
+                                    </td>
+                                    <td>
+                                        <a asp-action="Edit" asp-route-id="@item.AcademicoID">Edit</a> |
+                                        <a asp-action="Details" asp-route-id="@item.AcademicoID">Details</a> |
+                                        <a asp-action="Delete" asp-route-id="@item.AcademicoID">Delete</a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="card-footer text-center">
+                <a asp-action="Create" class="btn text-white btn-b">Criar um novo acadêmico</a>
+            </div>
+        </div>
     </div>
 </div>
 

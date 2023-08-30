@@ -20,64 +20,73 @@
     <link rel="stylesheet" href="~/css/site.css">
 </head>
 
-<div class="card-block">
-    <div class="card-header text-white text-center h3">
-        Exibindo um acadêmico existente
+<div class="row">
+    <div class="col-md-4 d-flex align-items-center justify-content-center">
+        <center>
+            <img src="~/images/ensino-on-line.png" class="img-fluid" alt="instituições" class="img-lado">
+        </center>
     </div>
-    <div class="card-body">
-        <div class="row">
-            <div class="col-9">
-                <div class="form-group">
-                    <label asp-for="AcademicoID" class="control-label"></label>
-                    <br />
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text">
-                                <i class="fa fa-key" aria-hidden="true"></i>
-                            </span>
+    <div class="col-md-8">
+        <div class="card-block">
+            <div class="card-header text-white text-center h3">
+                Exibindo um acadêmico existente
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-9">
+                        <div class="form-group">
+                            <label asp-for="AcademicoID" class="control-label"></label>
+                            <br />
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">
+                                        <i class="fa fa-key" aria-hidden="true"></i>
+                                    </span>
+                                </div>
+                                <input asp-for="AcademicoID" class="form-control" disabled="disabled" />
+                            </div>
+                            <label asp-for="RegistroAcademico" class="control-label"></label>
+                            <br />
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">
+                                        <i class="fa fa-address-card-o" aria-hidden="true"></i>
+                                    </span>
+                                </div>
+                                <input asp-for="RegistroAcademico" class="form-control" disabled="disabled" />
+                            </div>
+                            <label asp-for="Nome" class="control-label"></label>
+                            <br />
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">
+                                        <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+                                    </span>
+                                </div>
+                                <input asp-for="Nome" class="form-control" disabled="disabled" />
+                            </div>
+                            <label asp-for="Nascimento" class="control-label"></label>
+                            <br />
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">
+                                        <i class="fa fa-address-card-o" aria-hidden="true"></i>
+                                    </span>
+                                </div>
+                                <input asp-for="Nascimento" class="form-control" disabled="disabled" />
+                            </div>
                         </div>
-                        <input asp-for="AcademicoID" class="form-control" disabled="disabled" />
                     </div>
-                    <label asp-for="RegistroAcademico" class="control-label"></label>
-                    <br />
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text">
-                                <i class="fa fa-address-card-o" aria-hidden="true"></i>
-                            </span>
-                        </div>
-                        <input asp-for="RegistroAcademico" class="form-control" disabled="disabled" />
-                    </div>
-                    <label asp-for="Nome" class="control-label"></label>
-                    <br />
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text">
-                                <i class="fa fa-user-circle-o" aria-hidden="true"></i>
-                            </span>
-                        </div>
-                        <input asp-for="Nome" class="form-control" disabled="disabled" />
-                    </div>
-                    <label asp-for="Nascimento" class="control-label"></label>
-                    <br />
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text">
-                                <i class="fa fa-address-card-o" aria-hidden="true"></i>
-                            </span>
-                        </div>
-                        <input asp-for="Nascimento" class="form-control" disabled="disabled" />
+                    <div class="col-3">
+                        <img class="img-thumbnail" src="@Url.Action("GetFoto", "Academico", new { id = Model.AcademicoID })" />
+                        @Html.ActionLink("Download", "DownloadFoto", "Academico", new { id = Model.AcademicoID }, null)
                     </div>
                 </div>
             </div>
-            <div class="col-3">
-                <img class="img-thumbnail" src="@Url.Action("GetFoto", "Academico", new { id = Model.AcademicoID })" />
-                @Html.ActionLink("Download", "DownloadFoto", "Academico", new { id = Model.AcademicoID }, null)
+            <div class="card-footer text-center text-white">
+                <a asp-action="Index" class="btn btn-transparent">Retornar à listagem de acadêmicos</a>
+                <a asp-action="Edit" class="btn text-white btn-b" asp-route-id="@Model.AcademicoID">Alterar</a>
             </div>
         </div>
-    </div>
-    <div class="card-footer text-center text-white">
-        <a asp-action="Index" class="btn btn-transparent">Retornar à listagem de acadêmicos</a>
-        <a asp-action="Edit" class="btn text-white btn-b" asp-route-id="@Model.AcademicoID">Alterar</a>
     </div>
 </div>

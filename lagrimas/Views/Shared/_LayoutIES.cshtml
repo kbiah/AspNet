@@ -34,7 +34,7 @@
            <div class="row">
                <div class="col-sm-4 p-0">
                    <a class="navbar-brand text-dark" asp-area="" asp-controller="Home" asp-action="Index">
-                       <img src="~/images/drops_599508.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+                       <img src="~/images/drops_599508.png" alt="Logo" class="logo" width="30" height="24" class="d-inline-block align-text-top">
                             Lagrimas.Net
                         </a>
                </div>
@@ -45,12 +45,15 @@
     <div class="container-fluid">
         <div class="row" style="background-color:#5E6EAC; margin: 0;">
             <div class="col-12" style="padding: 0;">
-                <nav class="navigation navbar navbar-expand navbar-dark" >
+                <nav class="navigation navbar navbar-expand-lg navbar-dark">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
                     <div class="collapse navbar-collapse" id="navbarsExample04">
                         <ul class="navbar-nav">
                             <li class="nav-item active" style="padding-left:1rem">
                                 <a class="navbar-brand text-white" asp-area="" asp-controller="Home" asp-action="Index">
-                                        Início
+                                    Início
                                 </a>
                             </li>
                             <li class="nav-item">
@@ -59,36 +62,20 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                 <a class="nav-item nav-link text-white" asp-area="Cadastros" asp-controller="Departamento" asp-action="Index">
+                                <a class="nav-item nav-link text-white" asp-area="Cadastros" asp-controller="Departamento" asp-action="Index">
                                     Departamentos
-                                 </a>
+                                </a>
                             </li>
                             <li class="nav-item">
-                                 <a class="nav-item nav-link text-white" asp-area="Discente" asp-controller="Academico" asp-action="Index">
+                                <a class="nav-item nav-link text-white" asp-area="Discente" asp-controller="Academico" asp-action="Index">
                                     Academicos
-                                  </a>
+                                </a>
                             </li>
                             <li class="nav-item">
-                                  <a class="nav-item nav-link text-white" asp-area="Docente" asp-controller="Professor" asp-action="AdicionarProfessor">
+                                <a class="nav-item nav-link text-white" asp-area="Docente" asp-controller="Professor" asp-action="AdicionarProfessor">
                                     Professores
-                                  </a>
+                                </a>
                             </li>
-                            @*<li class="nav-item">
-                                @if (SignInManager.IsSignedIn(User))
-                                {
-                                    <a class="nav-item text-white ml-auto"> Bem vindo(a), @UserManager.GetUserName(User).  |
-                                        <span style="color: white;">
-                                            @Html.ActionLink("Sair", "Sair", "Infra", new { area = "" })
-                                        </span>
-                                    </a>
-                                }
-                                else
-                                {
-                                    <a class="nav-item nav-link text-white ml-auto" asp-area="" asp-controller="Infra" asp-action="Acessar">
-                                        Informar usuário para acessar
-                                    </a>
-                                }
-                            </li>*@
                         </ul>
                     </div>
                 </nav>
