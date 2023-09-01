@@ -4,18 +4,7 @@
     Layout = "_LayoutIES";
 }
 ﻿
-@section Styles {
-    <environment include="Development">
-        <link rel="stylesheet" href="~/lib/datatables/css/jquery.dataTables.min.css" />
-    </environment>
-    <environment exclude="Development">
-        <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css"
-              asp-fallback-href="~/lib/datatables/css/jquery.dataTables.min.css"
-              asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
-    </environment>
-}
-
-    @*   coisa do delete   *@
+@*   coisa do delete   *@
 @if (@TempData["Message"] != null)
 {
     <div class="alert alert-success" role="alert">
@@ -23,9 +12,7 @@
     </div>
 }
 
-<head>
-    <link rel="stylesheet" href="~/css/site.css">
-</head>
+@await Html.PartialAsync("_StylesPartial")
 
 <div class="row">
     <div class="col-md-4 d-flex align-items-center justify-content-center">
@@ -35,10 +22,10 @@
     </div>
     <div class="col-md-8">
         <div class="card border-0">
-            <div class="card-header text-white text-center h3">Instituições Registradas</div>
+            <div class="card-header text-center h3 titulo border-0">Instituições Registradas</div>
             <div class="card-body">
-                <div class="table-responsive">
-                    <table id="tabela_instituicoes" class="table">
+                <div class="table-responsive border-0">
+                    <table id="tabela_instituicoes" class="table table-striped nolines-table">
                         <thead>
                             <tr>
                                 <th>
@@ -77,28 +64,19 @@
                     </table>
                 </div>
             </div>
-            <div class="card-footer text-center">
-                <a asp-action="Create" class="btn text-white btn-b">Criar uma nova instituição</a>
+            <div class="card-footer text-center border-0">
+                <a asp-action="Create" class="btn btn-b">Criar uma nova instituição</a>
             </div>
         </div>
     </div>
 </div>
 
-@section ScriptPage {
-    <environment include="Development">
-        <script src="~/lib/datatables/js/jquery.dataTables.min.js"></script>
-    </environment>
-    <environment exclude="Development">
-        <script src="//cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"
-                asp-fallback-src="~/lib/datatables/js/jquery.dataTables.min.js">
-        </script>
-    </environment>
+@await Html.PartialAsync("_ScriptPartial")
 
     <script type="text/javascript">
         $(document).ready(function () {
             $('#tabela_instituicoes').DataTable({
                 "order": [[1, "asc"]]
             });
-        });
+        }) ;
     </script>
-}

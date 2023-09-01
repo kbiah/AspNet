@@ -4,9 +4,7 @@
     Layout = "_LayoutIES";
 }
 
-@section styles {
-    <link rel="stylesheet" href="~/lib/datatables/media/css/jquery.dataTables.min.css" />
-}
+@await Html.PartialAsync("_StylesPartial")
 
 @if (@TempData["Message"] != null)
 {
@@ -14,9 +12,6 @@
         @TempData["Message"]
     </div>
 }
-<head>
-    <link rel="stylesheet" href="~/css/site.css">
-</head>
 
 <div class="row">
     <div class="col-md-4 d-flex align-items-center justify-content-center">
@@ -27,10 +22,10 @@
     <div class="col-md-8">
         <div class="col-sm-12 card-block">
             <div class="card border-0">
-                <div class="card-header text-white text-center h3">Departamentos Registrados</div>
+                <div class="card-header text-center h3 titulo border-0">Departamentos Registrados</div>
                 <div class="card-body">
                     <div class="table-responsive">
-                        <table id="tabela_departamentos" class="table">
+                        <table id="tabela_departamentos" class="table table-striped nolines-table">
                             <thead>
                                 <tr>
                                     <th>
@@ -63,16 +58,16 @@
                         </table>
                     </div>
                 </div>
-                <div class="card-footer text-center">
-                    <a asp-action="Create" class="btn text-white btn-b">Criar um novo departamento</a>
+                <div class="card-footer text-center border-0">
+                    <a asp-action="Create" class="btn btn-b">Criar um novo departamento</a>
                 </div>
             </div>
         </div>
     </div>
 </div>
 
-@section ScriptPage {
-    <script type="text/javascript" src="~/lib/datatables/media/js/jquery.dataTables.min.js"></script>
+@await Html.PartialAsync("_ScriptPartial")
+@*  @await Html.PartialAsync("_PartialDetailsContentCard");*@
 
     <script type="text/javascript">
         $(document).ready(function () {
@@ -81,4 +76,3 @@
             });
         });
     </script>
-}

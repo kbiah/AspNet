@@ -5,20 +5,7 @@
     Layout = "~/Views/Shared/_LayoutIES.cshtml";
 }
 
-@section Styles {
-    <environment include="Development">
-        <link rel="stylesheet" href="~/lib/font-awesome/css/font-awesome.min.css" />
-    </environment>
-    <environment exclude="Development">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-              asp-fallback-href="~/lib/font-awesome/css/font-awesome.min.css"
-              asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
-    </environment>
-}
-
-<head>
-    <link rel="stylesheet" href="~/css/site.css">
-</head>
+@await Html.PartialAsync("_StylesPartial")
 
 <div class="row">
     <div class="col-md-4 d-flex align-items-center justify-content-center">
@@ -28,7 +15,7 @@
     </div>
     <div class="col-md-8">
         <div class="card-block">
-            <div class="card-header text-white text-center h3">
+            <div class="card-header text-center h3 titulo border-0">
                 Exibindo um acadêmico existente
             </div>
             <div class="card-body">
@@ -83,10 +70,15 @@
                     </div>
                 </div>
             </div>
-            <div class="card-footer text-center text-white">
+            <div class="card-footer text-center btn-transparent">
                 <a asp-action="Index" class="btn btn-transparent">Retornar à listagem de acadêmicos</a>
                 <a asp-action="Edit" class="btn text-white btn-b" asp-route-id="@Model.AcademicoID">Alterar</a>
             </div>
         </div>
     </div>
 </div>
+
+
+@{
+    await Html.PartialAsync("_ScriptPartial");
+}

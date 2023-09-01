@@ -3,9 +3,9 @@
     ViewData["Title"] = "Acessar";
     Layout = "~/Views/Shared/_LayoutIES.cshtml";
 }
-<head>
-    <link rel="stylesheet" href="~/css/site.css">
-</head>
+@{
+    await Html.RenderPartialAsync("_StylesPartial");
+}
 
 <div class="row">
     <div class="col-md-4 d-flex align-items-center justify-content-center">
@@ -30,7 +30,7 @@
                             <span asp-validation-for="Email" class="text-danger"></span>
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group p-2">
                             <label asp-for="Senha"></label>
                             <input asp-for="Senha" class="form-control" />
                             <span asp-validation-for="Senha" class="text-danger"></span>
@@ -45,17 +45,17 @@
                             </div>
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group pt-3">
                             <button type="submit" class="btn btn-b">
                                 Acessar
                             </button>
                         </div>
 
-                        <div class="form-group">
-                            <p>
+                        <div class="form-group pt-3">
+                            <p> Não possui uma conta?
                                 <a asp-action="RegistrarNovoUsuario"
                                    asp-route-returnurl="@ViewData["ReturnUrl"]">
-                                    Registrar um novo usuário?
+                                    Registrar-se
                                 </a>
                             </p>
                         </div>
@@ -67,7 +67,7 @@
     </div>
 </div>
 
-@section ScriptPage {
-    @await Html.PartialAsync("_ValidationScriptsPartial")
 
-}
+@await Html.PartialAsync("_ValidationScriptsPartial");
+@await Html.PartialAsync("_ScriptPartial");
+@await Html.PartialAsync("_StylesPartial");

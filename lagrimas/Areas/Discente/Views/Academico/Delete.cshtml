@@ -5,9 +5,7 @@
     Layout = "~/Views/Shared/_LayoutIES.cshtml";
 }
 
-<head>
-    <link rel="stylesheet" href="~/css/site.css">
-</head>
+@await Html.PartialAsync("_StylesPartial")
 
 <div class="row">
     <div class="col-md-4 d-flex align-items-center justify-content-center">
@@ -17,7 +15,7 @@
     </div>
     <div class="col-md-8">
         <div class="card-block">
-            <div class="card-header text-white text-center h3">
+            <div class="card-header text-center h3 titulo border-0">
                 Exibindo um acadêmico existente
             </div>
             <hr />
@@ -50,3 +48,5 @@
         </div>
     </div>
 </div>
+
+@await Html.PartialAsync("_ScriptPartial")

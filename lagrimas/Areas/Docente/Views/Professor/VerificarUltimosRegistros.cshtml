@@ -4,13 +4,13 @@
     Layout = "_LayoutIES";
 }
 
-<!DOCTYPE html>
+    @await Html.PartialAsync("_StylesPartial")
 
+<!DOCTYPE html>
 <html>
     <head>
         <meta name="viewport" content="width=device-width" />
         <title>Registos</title>
-        <link rel="stylesheet" href="~/css/site.css">
     </head>
 
     <body>
@@ -21,10 +21,10 @@
                 </center>
             </div>
             <div class="col-md-8">
-                <div class="card-header text-white text-center h3" style=" padding-left:4rem; padding-right:4rem">
+            <div class="card-header text-center h3 titulo border-0" style=" padding-left:4rem; padding-right:4rem">
                     Verificar Ultimos Registros
                 </div>
-                <table class="table">
+            <table class="table table-striped nolines-table">
                     <thead>
                         <tr>
                             <th>
@@ -50,9 +50,11 @@
                     </tbody>
                 </table>
                 <p>
-                    <a asp-action="AdicionarProfessor">Voltar para Adicionar Professor</a>
+                    <a asp-action="AdicionarProfessor">Voltar para adicionar um professor</a>
                 </p>
             </div>
         </div>
     </body>
 </html>
+
+    @await Html.PartialAsync("_ScriptPartial")

@@ -4,10 +4,7 @@
     Layout = "_LayoutIES";
 }
 
-@section styles {
-    <link rel="stylesheet" href="~/lib/font-awesome/css/font-awesome.min.css" />
-    <link rel="stylesheet" href="~/css/site.css">
-}
+    @await Html.PartialAsync("_StylesPartial")
 
 <div class="row">
     <div class="col-md-4 d-flex align-items-center justify-content-center">
@@ -17,7 +14,7 @@
     </div>
     <div class="col-md-8">
         <div class="card-block">
-            <div class="card-header text-white text-center h3">Exibindo uma departamento existente</div>
+            <div class="card-header text-center h3 titulo border-0">Exibindo uma departamento existente</div>
             <div class="card-body">
                 <div class="form-group">
                     <label asp-for="DepartamentoID" class="control-label"></label>
@@ -46,10 +43,12 @@
                     </div>
                 </div>
             </div>
-            <div class="card-footer text-center text-white">
+            <div class="card-footer text-center border-0">
                 <a asp-action="Index" class="btn btn-transparent">Retornar à listagem de departamentos</a>
-                <a asp-action="Edit" class="btn text-white btn-b" asp-route-id="@Model.DepartamentoID">Alterar</a> |
+                <a asp-action="Edit" class="btn btn-b" asp-route-id="@Model.DepartamentoID">Alterar</a> |
             </div>
         </div>
     </div>
 </div>
+
+    @await Html.PartialAsync("_ScriptPartial")

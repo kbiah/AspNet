@@ -5,39 +5,28 @@
     Layout = "_LayoutIES";
 }
 
-@section Styles {
-    <environment include="Development">
-        <link rel="stylesheet" href="~/lib/font-awesome/css/all.css" />
-    </environment>
-    <environment exclude="Development">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/font-awesome.min.css"
-              asp-fallback-href="~/lib/font-awesome/css/all.css"
-              asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
-    </environment>
-}
-
-<head>
-    <link rel="stylesheet" href="~/css/site.css">
-</head>
+@await Html.PartialAsync("_StylesPartial")
 
 <div class="row">
-    <div class="col-md-2 d-flex align-items-center justify-content-center">
+    <div class="col-md-3 d-flex align-items-center justify-content-center">
         <center>
             <img src="~/images/auto-aprendizagem.png" class="img-fluid" alt="instituições" class="img-lado">
         </center>
     </div>
-    <div class="col-md-10">
+    <div class="col-md-9">
         <div class="card-block">
-            <div class="card-header text-white text-center h3">Exibindo uma instituição existente</div>
+            <div class="card-header text-center h3 titulo border-0">Exibindo uma instituição existente</div>
 
 
            @{await Html.RenderPartialAsync("~/Areas/Cadastros/Views/Instituicao/_PartialDetailsContentCard.cshtml", Model); }
     
 
-            <div class="card-footer text-center text-white">
+            <div class="card-footer text-center border-0">
                 <a asp-action="Index" class="btn btn-transparent">Retornar à listagem de instituições</a>
-                <a asp-action="Edit" class="btn text-white btn-b" asp-route-id="@Model.InstituicaoID">Alterar</a>
+                <a asp-action="Edit" class="btn btn-b" asp-route-id="@Model.InstituicaoID">Alterar</a>
             </div>
         </div>
     </div>
 </div>
+
+ @await Html.PartialAsync("_ScriptPartial")

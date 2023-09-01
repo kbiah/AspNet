@@ -1,12 +1,9 @@
 ﻿@model IEnumerable<Modelo.Cadastros.Departamento>
 
-
-<head>
-    <link rel="stylesheet" href="~/css/site.css">
-</head>
+@await Html.PartialAsync("_StylesPartial")
 
 <div class="card-block" style="width: auto">
-    <div class="card-header text-white text-center">Departamentos Registrados na Instituição</div>
+    <div class="card-header text-center departo">Departamentos Registrados na Instituição</div>
     <div class="card-body">
         <table>
             <thead>

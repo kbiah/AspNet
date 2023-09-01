@@ -1,13 +1,42 @@
-﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-for details on configuring this project to bundle and minify static web assets. */
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification */
 
 .btn-b {
     background-color: #5E6EAC;
+    color: white;
+    border: none;
+}
+
+.btn-b:hover,
+.btn-b:focus {
+    background-color: #5E6EAC;
+    color: white;
+    border: none;
+}
+
+.nolines-table {
+    border-collapse: collapse;
+    border: none;
+}
+
+.nolines-table th,
+.nolines-table td {
+    border: none;
+}
+
+    btn-index {
+    text-align: right;
+    width: auto;
+    height: 15px;
 }
 
 .img-lado {
-    max-width: 70%;
-    height: auto;
+    width: 50%;
+    height: 50%;
+    align-content:center;
+}
+
+.card-footer {
+    background-color:#fff;
 }
 
 .card-block, .card {
@@ -19,7 +48,11 @@ for details on configuring this project to bundle and minify static web assets. 
 
 .card-header {
     height: auto;
-    background-color: #5E6EAC;
+    background-color: #fff;
+}
+
+.titulo {
+    color: #5E6EAC;
 }
 
 a.navbar-brand {
@@ -28,7 +61,11 @@ a.navbar-brand {
     word-break: break-all;
 }
 
-.img-thumbnail {
+.align-right {
+    margin-left: auto;
+}
+
+    .img-thumbnail {
     display:block;
     margin-left:auto;
     margin-right:auto;
@@ -131,4 +168,15 @@ body {
   width: 100%;
   white-space: nowrap;
   line-height: 60px; /* Vertically center the text there */
+}
+
+.navbar-toggler-icon {
+    display: inline-block;
+    width: 1.5em;
+    height: 1.5em;
+    vertical-align: middle;
+    background-image: var(--bs-navbar-toggler-icon-bg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
 }

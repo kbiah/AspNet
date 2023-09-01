@@ -7,13 +7,13 @@ namespace Modelo.Discente
 {
     public class Academico
     {
-        [DisplayName("Id")]
+        [DisplayName("Código")]
         public long? AcademicoID { get; set; }
 
         [StringLength(10, MinimumLength = 10)]
         [RegularExpression("([0-9]{10})")]
         [Required(ErrorMessage = "Preencha esse campo!")]
-        [DisplayName("Número do RA")]
+        [DisplayName("Número do Registro")]
         public string RegistroAcademico { get; set; }
 
         [Required(ErrorMessage = "Preencha esse campo!")]

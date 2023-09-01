@@ -5,9 +5,7 @@
     Layout = "~/Views/Shared/_LayoutIES.cshtml";
 }
 
-<head>
-    <link rel="stylesheet" href="~/css/site.css">
-</head>
+@await Html.PartialAsync("_StylesPartial")
 
 <div class="row">
     <div class="col-md-4 d-flex align-items-center justify-content-center">
@@ -17,7 +15,7 @@
     </div>
     <div class="col-md-8">
         <div class="card-block">
-            <div class="card-header text-white text-center h3">Alterando uma instituição existente</div>
+            <div class="card-header text-center h3 titulo border-0">Alterando uma instituição existente</div>
             <div class="card-body">
                 <form asp-action="Edit">
                     <input type="hidden" asp-for="InstituicaoID" />
@@ -32,21 +30,16 @@
                         <input asp-for="Endereco" class="form-control" />
                         <span asp-validation-for="Endereco" class="text-danger"></span>
                     </div>
-                    <div class="form-group text-center h3">
-                        <a asp-action="Index" class="btn btn-white">Retornar à listagem de instituições</a>
-                        <input type="submit" value="Atualizar Instituição" class="btn text-white btn-b" />
+                    <div class="form-group text-center border-0">
+                        <a asp-action="Index" class="btn btn-transparent">Retornar à listagem de instituições</a>
+                        <input type="submit" value="Atualizar Instituição" class="btn btn-b" />
                     </div>
                 </form>
             </div>
-            @*<div class="card-footer bg-warning text-center text-white">
-                Informe os dados acima e/ou clique em um dos botões de ação
-            </div>*@
         </div>
     </div>
 </div>
 
-@section ScriptPage {
-    @{
-        await Html.RenderPartialAsync("_ValidationScriptsPartial");
-    }
-}
+
+ @await Html.PartialAsync("_ValidationScriptsPartial")
+ @await Html.PartialAsync("_ScriptPartial")

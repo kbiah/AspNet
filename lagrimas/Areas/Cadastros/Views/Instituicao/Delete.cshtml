@@ -4,46 +4,33 @@
     Layout = "~/Views/Shared/_LayoutIES.cshtml";
 }
 
-@section Styles {
-    <environment include="Development">
-        <link rel="stylesheet" href="~/lib/font-awesome/css/all.css" />
-    </environment>
-    <environment exclude="Development">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-              asp-fallback-href="~/lib/font-awesome/css/all.css"
-              asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
-    </environment>
-}
-
-<head>
-    <link rel="stylesheet" href="~/css/site.css">
-</head>
+@await Html.PartialAsync("_StylesPartial")
 
 <div class="row">
-    <div class="col-md-2 d-flex align-items-center justify-content-center">
+    <div class="col-md-3 d-flex align-items-center justify-content-center">
         <center>
             <img src="~/images/auto-aprendizagem.png" class="img-fluid" alt="instituições" class="img-lado" style="width:75%">
         </center>
     </div>
-    <div class="col-md-10">
+    <div class="col-md-9">
         <div class="card-block">
-            <div class="card-header text-white text-center h3">Apagar uma Instituição</div>
+            <div class="card-header text-center h3 titulo border-0">Apagar uma Instituição</div>
 
-           @{await Html.RenderPartialAsync("~/Areas/Cadastros/Views/Instituicao/_PartialDetailsContentCard.cshtml", Model); }
+            @{
+                await Html.RenderPartialAsync("~/Areas/Cadastros/Views/Instituicao/_PartialDetailsContentCard.cshtml", Model);
+            }
 
-            <div class="card-footer bg-transparent text-center text-white">
+            <div class="card-footer bg-transparent text-center border-0">
                 <form asp-action="Delete">
                     <input type="hidden" asp-for="InstituicaoID" />
                     <a asp-action="Index" class="btn btn-transparent">Retornar à listagem de instituições</a>
-                    <input type="submit" value="Remover Instituição" class="btn text-white btn-b" />
+                    <input type="submit" value="Remover Instituição" class="btn btn-b" />
                 </form>
             </div>
         </div>
     </div>
 </div>
 
-@section ScriptPage {
-    @{
-        await Html.RenderPartialAsync("_ValidationScriptsPartial");
-    }
-}
+
+@await Html.PartialAsync("_ValidationScriptsPartial")
+@await Html.PartialAsync("_ScriptPartial")

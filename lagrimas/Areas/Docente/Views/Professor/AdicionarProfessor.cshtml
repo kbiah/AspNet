@@ -3,9 +3,7 @@
     Layout = "_LayoutIES";
 }
 
-<head>
-    <link rel="stylesheet" href="~/css/site.css">
-</head>
+@await Html.PartialAsync("_StylesPartial")
 
 <div class="row">
     <div class="col-md-4 d-flex align-items-center justify-content-center">
@@ -15,7 +13,7 @@
     </div>
     <div class="col-md-8">
         <div class="card border-0">
-            <div class="card-header text-white text-center h3 border-0">
+            <div class="card-header text-center h3 titulo border-0">
                 Registrando um professor em um curso
             </div>
             <div class="card-body">
@@ -47,53 +45,53 @@
                         </select>
                     </div>
                     <div class="form-group text-center h3">
-                        <a asp-action="VerificarUltimosRegistros" class="btn btn-transparent">Verificar últimos registros</a>
+                        <a asp-action="VerificarUltimosRegistros" class="btn btn-white">Verificar últimos registros</a>
                         <input type="submit" value="Registrar Professor" class="btn text-white btn-b" />
                     </div>
                 </form>
             </div>
         </div>
-     </div>
+    </div>
 </div>
 
-@section ScriptPage {
-    @{
-        await Html.RenderPartialAsync("_ValidationScriptsPartial");
-    }
-    <script type="text/javascript">
-        $(document).on("change", '#InstituicaoID', function (e) {
-            var instituicaoID = $(this).find(":selected").val();
-            GetDadosParaDropDownList(instituicaoID, '#DepartamentoID', 'DEPARTAMENTO');
-        });
 
-        $(document).on("change", '#DepartamentoID', function (e) {
-            var departamentoID = $(this).find(":selected").val();
-            GetDadosParaDropDownList(departamentoID, '#CursoID', 'CURSO');
-        });
+@await Html.PartialAsync("_ValidationScriptsPartial")
+@await Html.PartialAsync("_ScriptPartial")
 
-        $(document).on("change", '#CursoID', function (e) {
-            var cursoID = $(this).find(":selected").val();
-            GetDadosParaDropDownList(cursoID, '#ProfessorID', 'PROFESSOR');
-        });
 
-        function GetDadosParaDropDownList(valorBuscar, controleAtualizar, nomeDado) {
-            var optionControleAtualizar = controleAtualizar + ' option';
-            if (valorBuscar.length > 0) {
-                var url = $(controleAtualizar).data('url');
-                $.getJSON(url, { actionID: valorBuscar }, function (dadosRecebidos) {
-                    $(optionControleAtualizar).remove();
-                    $(controleAtualizar).append('<option value="0">Selecione o ' + nomeDado + '</option');
-                    for (i = 0; i < dadosRecebidos.length; i++) {
-                        $(controleAtualizar).append('<option value="' + dadosRecebidos[i].value + '">' + dadosRecebidos[i].text + '</option');
-                    }
-                }).fail(function (jqXHR, textStatus, errorThrown) {
-                    debugger;
-                    alert('Erro de conexão', 'Erro obtendo dados');
-                });
-            } else {
+<script type="text/javascript">
+    $(document).on("change", '#InstituicaoID', function (e) {
+        var instituicaoID = $(this).find(":selected").val();
+        GetDadosParaDropDownList(instituicaoID, '#DepartamentoID', 'DEPARTAMENTO');
+    });
+
+    $(document).on("change", '#DepartamentoID', function (e) {
+        var departamentoID = $(this).find(":selected").val();
+        GetDadosParaDropDownList(departamentoID, '#CursoID', 'CURSO');
+    });
+
+    $(document).on("change", '#CursoID', function (e) {
+        var cursoID = $(this).find(":selected").val();
+        GetDadosParaDropDownList(cursoID, '#ProfessorID', 'PROFESSOR');
+    });
+
+    function GetDadosParaDropDownList(valorBuscar, controleAtualizar, nomeDado) {
+        var optionControleAtualizar = controleAtualizar + ' option';
+        if (valorBuscar.length > 0) {
+            var url = $(controleAtualizar).data('url');
+            $.getJSON(url, { actionID: valorBuscar }, function (dadosRecebidos) {
                 $(optionControleAtualizar).remove();
-                $(controleAtualizar).append('<option value=""></option');
-            }
+                $(controleAtualizar).append('<option value="0">Selecione o ' + nomeDado + '</option');
+                for (i = 0; i < dadosRecebidos.length; i++) {
+                    $(controleAtualizar).append('<option value="' + dadosRecebidos[i].value + '">' + dadosRecebidos[i].text + '</option');
+                }
+            }).fail(function (jqXHR, textStatus, errorThrown) {
+                debugger;
+                alert('Erro de conexão', 'Erro obtendo dados');
+            });
+        } else {
+            $(optionControleAtualizar).remove();
+            $(controleAtualizar).append('<option value=""></option');
         }
-    </script>
-}
+    }
+</script>
