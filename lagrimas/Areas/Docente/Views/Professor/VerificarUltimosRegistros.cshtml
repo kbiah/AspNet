@@ -4,57 +4,57 @@
     Layout = "_LayoutIES";
 }
 
-    @await Html.PartialAsync("_StylesPartial")
+@await Html.PartialAsync("_StylesPartial")
 
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta name="viewport" content="width=device-width" />
-        <title>Registos</title>
-    </head>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Registos</title>
+</head>
 
-    <body>
-        <div class="row">
-            <div class="col-md-4 d-flex align-items-center justify-content-center">
-                <center>
-                    <img src="~/images/melhor-professora.png" class="img-fluid" alt="instituições" class="img-lado">
-                </center>
-            </div>
-            <div class="col-md-8">
-            <div class="card-header text-center h3 titulo border-0" style=" padding-left:4rem; padding-right:4rem">
-                    Verificar Ultimos Registros
-                </div>
-            <table class="table table-striped nolines-table">
-                    <thead>
-                        <tr>
-                            <th>
-                                @Html.DisplayNameFor(model => model.Curso)
-                            </th>
-                            <th>
-                                @Html.DisplayNameFor(model => model.Professor)
-                            </th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach (var item in Model)
-                        {
-                            <tr>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.CursoID)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.ProfessorID)
-                                </td>
-                            </tr>
-                        }
-                    </tbody>
-                </table>
-                <p>
-                    <a asp-action="AdicionarProfessor">Voltar para adicionar um professor</a>
-                </p>
-            </div>
+<body>
+    <div class="row">
+        <div class="col-md-4 d-flex align-items-center justify-content-center">
+            <center>
+                <img src="~/images/melhor-professora.png" class="img-fluid" alt="instituições" class="img-lado">
+            </center>
         </div>
-    </body>
+        <div class="col-md-6">
+            <div class="card-header text-center h3 titulo border-0" style=" padding-left:4rem; padding-right:4rem">
+                Verificar Ultimos Registros
+            </div>
+            <table class="table table-striped nolines-table">
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Curso)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Professor)
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.CursoID)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ProfessorID)
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+            <p>
+                <a asp-action="AdicionarProfessor">Voltar para adicionar um professor</a>
+            </p>
+        </div>
+    </div>
+</body>
 </html>
 
-    @await Html.PartialAsync("_ScriptPartial")
+@await Html.PartialAsync("_ScriptPartial")

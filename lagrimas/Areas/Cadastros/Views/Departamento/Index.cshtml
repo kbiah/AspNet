@@ -48,9 +48,16 @@
                                             @Html.DisplayFor(modelItem => item.Instituicao.Nome)
                                         </td>
                                         <td>
-                                            <a asp-action="Edit" asp-route-id="@item.DepartamentoID">Edit</a> |
-                                            <a asp-action="Details" asp-route-id="@item.DepartamentoID">Details</a> |
-                                            <a asp-action="Delete" asp-route-id="@item.DepartamentoID">Delete</a>
+                                            <div class="dropdown">
+                                                <button class="btn btn-b dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    Ações
+                                                </button>
+                                                <div class="dropdown-menu btn-b text-white" aria-labelledby="dropdownMenuButton">
+                                                    <a asp-action="Edit" asp-route-id="@item.DepartamentoID" class="dropdown-item">Edit</a>
+                                                    <a asp-action="Details" asp-route-id="@item.DepartamentoID" class="dropdown-item">Details</a>
+                                                    <a asp-action="Delete" asp-route-id="@item.DepartamentoID" class="dropdown-item">Delete</a>
+                                                </div>
+                                            </div>
                                         </td>
                                     </tr>
                                 }
@@ -76,3 +83,20 @@
             });
         });
     </script>
+
+<script>
+    $(document).ready(function () {
+        // quando clicar
+        $(".dropdown-toggle").click(function () {
+            // deixar visibel
+            $(this).next(".dropdown-menu").toggleClass("show");
+        });
+
+        // pra fechar quando clocae fora
+        $(document).click(function (e) {
+            if (!$(e.target).closest(".dropdown").length) {
+                $(".dropdown-menu").removeClass("show");
+            }
+        });
+    });
+</script>

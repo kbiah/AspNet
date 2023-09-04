@@ -13,7 +13,7 @@ Layout = "_LayoutIES";
             <img src="~/images/livraria-digital.png" class="img-fluid" alt="departamentos" class="img-lado">
         </center>
     </div>
-    <div class="col-md-8">
+    <div class="col-md-6">
         <div class="card-block">
             <div class="card-header text-center h3 titulo border-0">Alterando um departamento existente</div>
             <div class="card-body">
@@ -31,7 +31,7 @@ Layout = "_LayoutIES";
                         <select asp-for="InstituicaoID" class="form-control" asp-items=@ViewBag.Instituicoes></select>
                     </div>
 
-                    <div class="form-group text-center border-0">
+                    <div class="card-footer text-center border-0">
                         <a asp-action="Index" class="btn btn-transparent">Retornar à listagem de departamentos</a>
                         <input type="submit" value="Atualizar Departamento" class="btn btn-b" />
                     </div>

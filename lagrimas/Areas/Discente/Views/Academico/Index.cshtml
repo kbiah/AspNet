@@ -20,7 +20,7 @@
     </div>
     <div class="col-md-8">
         <div class="card border-0">
-            <div class="card-header text-center h3 titulo border-0">
+            <div class="card-header text-center h3 titulo border-0 pb-3 ">
                 Acadêmicos Registrados
             </div>
             <div class="card-body">
@@ -60,9 +60,16 @@
                                         @Html.DisplayFor(modelItem => item.Nascimento)
                                     </td>
                                     <td>
-                                        <a asp-action="Edit" asp-route-id="@item.AcademicoID">Edit</a> |
-                                        <a asp-action="Details" asp-route-id="@item.AcademicoID">Details</a> |
-                                        <a asp-action="Delete" asp-route-id="@item.AcademicoID">Delete</a>
+                                        <div class="dropdown">
+                                                <button class="btn btn-b dropdown-toggle show" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                                Ações
+                                            </button>
+                                            <div class="dropdown-menu btn-b text-white" aria-labelledby="dropdownMenuButton" data-popper-placement="left-start" style="position: absolute; inset: 0px 0px auto auto; margin: 0px; transform: translate(-119px, 0px);">
+                                                <a asp-action="Edit" asp-route-id="@item.AcademicoID" class="dropdown-item">Edit</a>
+                                                <a asp-action="Details" asp-route-id="@item.AcademicoID" class="dropdown-item">Details</a>
+                                                <a asp-action="Delete" asp-route-id="@item.AcademicoID" class="dropdown-item">Delete</a>
+                                            </div>
+                                        </div>
                                     </td>
                                 </tr>
                             }
@@ -88,3 +95,19 @@
         });
     </script>
 
+<script>
+    $(document).ready(function () {
+        // Handle the click event on the dropdown button
+        $(".dropdown-toggle").click(function () {
+            // Toggle the dropdown menu visibility
+            $(this).next(".dropdown-menu").toggleClass("show");
+        });
+
+        // Handle clicks outside the dropdown to close it
+        $(document).click(function (e) {
+            if (!$(e.target).closest(".dropdown").length) {
+                $(".dropdown-menu").removeClass("show");
+            }
+        });
+    });
+</script>
