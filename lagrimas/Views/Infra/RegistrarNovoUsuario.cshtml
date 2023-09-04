@@ -15,8 +15,8 @@
         </center>
     </div>
     <div class="col-md-8">
-        <div class="card-header text-white text-center h3" style="padding-left:4rem; padding-right:4rem">
-            Registrar uma nova conta de usuário
+        <div class="card-header text-center h3 titulo pb-3" style="padding-left:4rem; padding-right:4rem ">
+            Cadastro de usuário
         </div>
         <div class="row">
             <div class="col-md-4">
@@ -28,7 +28,6 @@
                         <label asp-for="Email"></label>
                         <input asp-for="Email" class="form-control" id="email" />
                         <span asp-validation-for="Email" class="text-danger"></span>
-                
                     </div>
                     <div class="form-group">
                         <label asp-for="Password"></label>
@@ -41,9 +40,17 @@
                         <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
                     </div>
                     <button type="submit" class="btn btn-b">
-                        Registrar
+                        Cadastrar-se
                     </button>
                 </form>
+                <div class="form-group pt-3">
+                    <p> Possui uma conta?
+                        <a asp-action="Acessar"
+                           asp-route-returnurl="@ViewData["ReturnUrl"]">
+                            Acessar 
+                        </a>
+                    </p>
+                </div>
             </div>
             <div class="col-md-4">
             </div>

@@ -8,66 +8,63 @@
 }
 
 <div class="row">
-    <div class="col-md-4 d-flex align-items-center justify-content-center">
+    <div class="col-md-4 d-flex align-items-center">
         <center>
-            <img src="~/images/discussao-on-line (1).png" class="img-fluid" alt="acessar" class="img-lado">
+            <img src="~/images/discussao-on-line (1).png" class="img-fluid justify-content-right" alt="acessar" class="img-lado" width="90%" style="padding-left:4rem;">
         </center>
     </div>
     <div class="col-md-8">
-        <div class="card-header text-white text-center h3" style="padding-left:4rem; padding-right:4rem">
-            Utilize uma conta local para acessar
+        <div class="card-header text-center titulo h3 border-0 pb-3 justify-content-center">
+            Acessar o site
         </div>
         <div class="row">
-            <div class="col-md-4"></div>
-            <div class="col-md-4">
-                <section>
-                    <form asp-route-returnurl="@ViewData["ReturnUrl"]" method="post">
-                        <div asp-validation-summary="All" class="text-danger"></div>
-                        <div class="form-group">
-                            <br /><br />
-                            <label asp-for="Email"></label>
-                            <input asp-for="Email" class="form-control" />
-                            <span asp-validation-for="Email" class="text-danger"></span>
-                        </div>
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+                <form asp-route-returnurl="@ViewData["ReturnUrl"]" method="post">
+                    <div asp-validation-summary="All" class="text-danger"></div>
+                    <div class="form-group">
+                        <label asp-for="Email"></label>
+                        <input asp-for="Email" class="form-control" />
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
 
-                        <div class="form-group p-2">
-                            <label asp-for="Senha"></label>
-                            <input asp-for="Senha" class="form-control" />
-                            <span asp-validation-for="Senha" class="text-danger"></span>
-                        </div>
+                    <div class="form-group p-2">
+                        <label asp-for="Senha"></label>
+                        <input asp-for="Senha" class="form-control" />
+                        <span asp-validation-for="Senha" class="text-danger"></span>
+                    </div>
 
-                        <div class="form-group">
-                            <div class="checkbox">
-                                <label asp-for="LembrarDeMim">
-                                    <input asp-for="LembrarDeMim" />
-                                    @Html.DisplayNameFor(m => m.LembrarDeMim)
-                                </label>
-                            </div>
+                    <div class="form-group">
+                        <div class="checkbox">
+                            <label asp-for="LembrarDeMim">
+                                <input asp-for="LembrarDeMim" />
+                                @Html.DisplayNameFor(m => m.LembrarDeMim)
+                            </label>
                         </div>
+                    </div>
 
-                        <div class="form-group pt-3">
-                            <button type="submit" class="btn btn-b">
-                                Acessar
-                            </button>
-                        </div>
+                    <div class="form-group pt-3">
+                        <button type="submit" class="btn btn-b h3">
+                            Acessar
+                        </button>
+                    </div>
 
-                        <div class="form-group pt-3">
-                            <p> Não possui uma conta?
-                                <a asp-action="RegistrarNovoUsuario"
-                                   asp-route-returnurl="@ViewData["ReturnUrl"]">
-                                    Registrar-se
-                                </a>
-                            </p>
-                        </div>
-                    </form>
-                </section>
-            </div>
-            <div class="col-md-4"></div>
+                    <div class="form-group pt-3">
+                        <p>
+                            Não possui uma conta?
+                            <a asp-action="RegistrarNovoUsuario"
+                               asp-route-returnurl="@ViewData["ReturnUrl"]">
+                                Cadastrar-se
+                            </a>
+                        </p>
+                    </div>
+                </form>
+            </div><div class="col-md-3"></div>
         </div>
     </div>
 </div>
 
 
-@await Html.PartialAsync("_ValidationScriptsPartial");
-@await Html.PartialAsync("_ScriptPartial");
-@await Html.PartialAsync("_StylesPartial");
+@await Html.PartialAsync("_ValidationScriptsPartial")
+@await Html.PartialAsync("_ScriptPartial")
+@await Html.PartialAsync("_StylesPartial")
