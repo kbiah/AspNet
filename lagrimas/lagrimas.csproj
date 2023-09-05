@@ -8,21 +8,25 @@
     <Compile Remove="NovaPasta2\**" />
     <Compile Remove="NovaPasta3\**" />
     <Compile Remove="NovaPasta\**" />
+    <Compile Remove="obj\**" />
     <Content Remove="Areas\Discente\**" />
     <Content Remove="NovaPasta1\**" />
     <Content Remove="NovaPasta2\**" />
     <Content Remove="NovaPasta3\**" />
     <Content Remove="NovaPasta\**" />
+    <Content Remove="obj\**" />
     <EmbeddedResource Remove="Areas\Discente\**" />
     <EmbeddedResource Remove="NovaPasta1\**" />
     <EmbeddedResource Remove="NovaPasta2\**" />
     <EmbeddedResource Remove="NovaPasta3\**" />
     <EmbeddedResource Remove="NovaPasta\**" />
+    <EmbeddedResource Remove="obj\**" />
     <None Remove="Areas\Discente\**" />
     <None Remove="NovaPasta1\**" />
     <None Remove="NovaPasta2\**" />
     <None Remove="NovaPasta3\**" />
     <None Remove="NovaPasta\**" />
+    <None Remove="obj\**" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Areas\Discente\Controllers\AcademicoController.cs" />
