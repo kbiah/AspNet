@@ -80,23 +80,6 @@
 
 @await Html.PartialAsync("_ScriptPartial")
 
-<script>
-    $(document).ready(function () {
-        // quando clicar 
-        $(".dropdown-toggle").click(function () {
-            // deixar visibel
-            $(this).next(".dropdown-menu").toggleClass("show");
-        });
-
-        // pra fechar quando clocae fora
-        $(document).click(function (e) {
-            if (!$(e.target).closest(".dropdown").length) {
-                $(".dropdown-menu").removeClass("show");
-            }
-        });
-    });
-</script>
-
     <script type="text/javascript">
         $(document).ready(function () {
             $('#tabela_instituicoes').DataTable({

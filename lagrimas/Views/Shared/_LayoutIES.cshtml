@@ -5,6 +5,7 @@
 
 <html>
 <head>
+
     @await Html.PartialAsync("_StylesPartial")
 
     <meta charset="utf-8" />
@@ -27,7 +28,7 @@
 
     @if (SignInManager.IsSignedIn(User))
     {
-        <!-- Content for authenticated users -->
+        <!-- com login aqui -->
         <div class="container-fluid">
             <div class="row" style="background-color:#5E6EAC; margin: 0;">
                 <div class="col-12" style="padding: 0;">
@@ -62,6 +63,13 @@
                                         Professores
                                     </a>
                                 </li>
+                                <li class="nav-item align-content-right" style="text-align:right">
+                                    <div class="row">
+                                        <a class="nav-item text-white" asp-area="" asp-controller="Infra" asp-action="Sair">
+                                            Sair <i class="fa fa-sign-in"></i>
+                                        </a>
+                                    </div>
+                                </li>
                             </ul>
                         </div>
                     </nav>
@@ -74,8 +82,7 @@
             <div class="col-6"></div>
             <div class="col-6">
                 <a class="nav-item text-dark">
-                    Bem vindo(a), @UserManager.GetUserName(User). |
-                    @Html.ActionLink("Sair", "Sair", "Infra", new { area = "" })
+                    <a class="btn" asp-area="" asp-controller="Infra" asp-action="Sair" style="font-size:15px"> Sair <i class="fa fa-sign-in"></i></a>
                 </a>
             </div>
         </div>

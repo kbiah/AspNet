@@ -3,7 +3,7 @@
     Layout = "_LayoutIES";
 }
 
-@await Html.PartialAsync("_StylesPartial")
+@{await Html.PartialAsync("_StylesPartial");}
 
 @if (@TempData["Message"] != null)
 {
@@ -18,7 +18,7 @@
             <img src="~/images/ensino-on-line.png" class="img-fluid" alt="instituições" class="img-lado">
         </center>
     </div>
-    <div class="col-md-8">
+    <div class="col-sm-8">
         <div class="card border-0">
             <div class="card-header text-center h3 titulo border-0 pb-3 ">
                 Acadêmicos Registrados
@@ -60,16 +60,7 @@
                                         @Html.DisplayFor(modelItem => item.Nascimento)
                                     </td>
                                     <td>
-                                        <div class="dropdown">
-                                                <button class="btn btn-b dropdown-toggle show" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                                Ações
-                                            </button>
-                                            <div class="dropdown-menu btn-b text-white" aria-labelledby="dropdownMenuButton" data-popper-placement="left-start" style="position: absolute; inset: 0px 0px auto auto; margin: 0px; transform: translate(-119px, 0px);">
-                                                <a asp-action="Edit" asp-route-id="@item.AcademicoID" class="dropdown-item">Edit</a>
-                                                <a asp-action="Details" asp-route-id="@item.AcademicoID" class="dropdown-item">Details</a>
-                                                <a asp-action="Delete" asp-route-id="@item.AcademicoID" class="dropdown-item">Delete</a>
-                                            </div>
-                                        </div>
+                                        teste
                                     </td>
                                 </tr>
                             }
