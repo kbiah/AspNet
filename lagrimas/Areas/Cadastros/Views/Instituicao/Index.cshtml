@@ -13,18 +13,19 @@
 }
 
 @await Html.PartialAsync("_StylesPartial")
+@await Html.PartialAsync("_ScriptPartial")
 
 <div class="row">
-    <div class="col-md-4 d-flex align-items-center justify-content-center">
+    <div class="col-md-3 d-flex align-items-center justify-content-center">
         <center>
-            <img src="~/images/auto-aprendizagem.png" class="img-fluid" alt="instituições" class="img-lado">
+            <img src="~/images/auto-aprendizagem.png" class="img-fluid" alt="instituições">
         </center>
     </div>
-    <div class="col-md-8">
+    <div class="col-md-9">
         <div class="card border-0">
             <div class="card-header text-center h3 titulo border-0">Instituições Registradas</div>
             <div class="card-body">
-                <div class="table-responsive border-0">
+                <div class=" border-0">
                     <table id="tabela_instituicoes" class="table table-striped nolines-table">
                         <thead>
                             <tr>
@@ -56,12 +57,12 @@
                                     <td>
                                         <div class="dropdown">
                                             <button class="btn btn-b dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                Ações
+                                                Detalhes
                                             </button>
                                             <div class="dropdown-menu btn-b text-white" aria-labelledby="dropdownMenuButton">
-                                                <a asp-action="Edit" asp-route-id="@item.InstituicaoID" class="dropdown-item">Edit</a>
-                                                <a asp-action="Details" asp-route-id="@item.InstituicaoID" class="dropdown-item">Details</a>
-                                                <a asp-action="Delete" asp-route-id="@item.InstituicaoID" class="dropdown-item">Delete</a>
+                                                <a asp-action="Edit" asp-route-id="@item.InstituicaoID" class="dropdown-item">Editar</a>
+                                                <a asp-action="Details" asp-route-id="@item.InstituicaoID" class="dropdown-item">Detalhes</a>
+                                                <a asp-action="Delete" asp-route-id="@item.InstituicaoID" class="dropdown-item">Apagar</a>
                                             </div>
                                         </div>
                                     </td>
@@ -78,7 +79,6 @@
     </div>
 </div>
 
-@await Html.PartialAsync("_ScriptPartial")
 
     <script type="text/javascript">
         $(document).ready(function () {
@@ -87,3 +87,20 @@
             });
         }) ;
     </script>
+
+<script>
+    $(document).ready(function () {
+        // quando clicar
+        $(".dropdown-toggle").click(function () {
+            // deixar visibel
+            $(this).next(".dropdown-menu").toggleClass("show");
+        });
+
+        // pra fechar quando clocae fora
+        $(document).click(function (e) {
+            if (!$(e.target).closest(".dropdown").length) {
+                $(".dropdown-menu").removeClass("show");
+            }
+        });
+    });
+</script>

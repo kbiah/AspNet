@@ -1,6 +1,8 @@
 ﻿@model Modelo.Cadastros.Instituicao
 
 @await Html.PartialAsync("_StylesPartial")
+@await Html.PartialAsync("_ScriptPartial")
+@await Html.PartialAsync("_ValidationScriptsPartial")
 
 <div class="card-body">
     <div class="row">
@@ -45,5 +47,3 @@
         </div>
     </div>
 </div>
-
-@await Html.PartialAsync("_ScriptPartial")

@@ -4,23 +4,24 @@
     Layout = "_LayoutIES";
 }
 
-    @await Html.PartialAsync("_StylesPartial")
+@await Html.PartialAsync("_StylesPartial")
+@await Html.PartialAsync("_ScriptPartial")
 
 <div class="row">
     <div class="col-md-4 d-flex align-items-center justify-content-center">
         <center>
-            <img src="~/images/livraria-digital.png" class="img-fluid" alt="departamentos" class="img-lado">
+            <img src="~/images/livraria-digital.png" class="img-fluid" alt="departamentos">
         </center>
     </div>
-    <div class="col-md-8">
+    <div class="col-md-6">
         <div class="card-block">
-            <div class="card-header text-center h3 titulo border-0">
+            <div class="card-header text-center h3 titulo border-0 pb-3">
                 Deletar um departamento
             </div>
 
             @{ await Html.RenderPartialAsync("~/Areas/Cadastros/Views/Departamento/_PartialDetailsContentCard.cshtml", Model); }
 
-            <div class="card-footer bg-transparent text-center border-0">
+            <div class="card-footer bg-transparent text-center border-0 pt-3">
                  <a asp-action="Index" class="btn btn-transparent">Retornar à listagem de Departamentos</a>
                 <button type="button" class="btn btn-b" data-toggle="modal" data-target="#modalConfirmationDelete">
                     Remover Departamento
@@ -53,5 +54,3 @@
             </div>
         </div>
     </div>
-
-    @await Html.PartialAsync("_ScriptPartial")

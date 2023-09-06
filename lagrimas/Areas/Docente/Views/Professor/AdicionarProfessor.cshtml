@@ -4,16 +4,18 @@
 }
 
 @await Html.PartialAsync("_StylesPartial")
+@await Html.PartialAsync("_ScriptPartial")
+@await Html.PartialAsync("_ValidationScriptsPartial")
 
 <div class="row">
     <div class="col-md-4 d-flex align-items-center justify-content-center">
         <center>
-            <img src="~/images/melhor-professora.png" class="img-fluid" alt="instituições" class="img-lado">
+            <img src="~/images/melhor-professora.png" class="img-fluid" alt="instituições">
         </center>
     </div>
     <div class="col-md-6">
         <div class="card border-0">
-            <div class="card-header text-center h3 titulo border-0">
+            <div class="card-header text-center h3 titulo border-0 pb-3">
                 Registrando um professor em um curso
             </div>
             <div class="card-body">
@@ -44,7 +46,7 @@
                                 data-url="@Url.Action("ObterProfessoresForaDoCurso", "Professor", new { area = "Docente" })">
                         </select>
                     </div>
-                    <div class="form-group text-center h3">
+                    <div class="form-group text-center h3 pt-3">
                         <a asp-action="VerificarUltimosRegistros" class="btn btn-white">Verificar últimos registros</a>
                         <input type="submit" value="Registrar Professor" class="btn text-white btn-b" />
                     </div>
@@ -53,11 +55,6 @@
         </div>
     </div>
 </div>
-
-
-@await Html.PartialAsync("_ValidationScriptsPartial")
-@await Html.PartialAsync("_ScriptPartial")
-
 
 <script type="text/javascript">
     $(document).on("change", '#InstituicaoID', function (e) {

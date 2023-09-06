@@ -6,16 +6,18 @@
 }
 
 @await Html.PartialAsync("_StylesPartial")
+@await Html.PartialAsync("_ScriptPartial")
+@await Html.PartialAsync("_ValidationScriptsPartial")
 
 <div class="row">
     <div class="col-md-4 d-flex align-items-center justify-content-center">
         <center>
-            <img src="~/images/auto-aprendizagem.png" class="img-fluid" alt="instituições" class="img-lado">
+            <img src="~/images/auto-aprendizagem.png" class="img-fluid" alt="instituições">
         </center>
     </div>
     <div class="col-md-6">
         <div class="card-block">
-            <div class="card-header text-center h3 titulo border-0">Registrando uma nova instituição</div>
+            <div class="card-header text-center h3 titulo border-0 pb-3">Registrando uma nova instituição</div>
             <div class="card-body">
                 <form asp-action="Create">
                     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
@@ -29,7 +31,7 @@
                         <input asp-for="Endereco" class="form-control" />
                         <span asp-validation-for="Endereco" class="text-danger"></span>
                     </div>
-                    <div class="form-group text-center border-0">
+                    <div class="form-group text-center border-0 pt-3">
                         <a asp-action="Index" class="btn btn-transparent">Retornar à listagem de instituições</a>
                         <input type="submit" value="Registrar Instituição" class="btn btn-b" />
                     </div>
@@ -39,8 +41,3 @@
     </div>
 </div>
 
-
-@{
-    await Html.RenderPartialAsync("_ValidationScriptsPartial");
-}
-@await Html.PartialAsync("_ScriptPartial")

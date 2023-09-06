@@ -4,49 +4,50 @@
     ViewData["Title"] = "Delete";
     Layout = "~/Views/Shared/_LayoutIES.cshtml";
 }
+<head>
+    @await Html.PartialAsync("_StylesPartial")
+    @await Html.PartialAsync("_ScriptPartial")
+</head>
+<body>
+    <div class="row">
+        <div class="col-md-4 d-flex align-items-center justify-content-center">
+            <center>
+                <img src="~/images/ensino-on-line.png" class="img-fluid" alt="instituições">
+            </center>
+        </div>
+        <div class="col-md-6">
+            <div class="card-block">
+                <div class="card-header text-center h3 titulo border-0 pb-3">
+                    Deseja apagar esse acadêmico?
+                </div>
+                <hr />
+                <dl class="row">
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.RegistroAcademico)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.RegistroAcademico)
+                    </dd>
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.Nome)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.Nome)
+                    </dd>
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.Nascimento)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.Nascimento)
+                    </dd>
+                </dl>
 
-@await Html.PartialAsync("_StylesPartial")
-
-<div class="row">
-    <div class="col-md-4 d-flex align-items-center justify-content-center">
-        <center>
-            <img src="~/images/ensino-on-line.png" class="img-fluid" alt="instituições" class="img-lado">
-        </center>
-    </div>
-    <div class="col-md-6">
-        <div class="card-block">
-            <div class="card-header text-center h3 titulo border-0">
-                Exibindo um acadêmico existente
+                <form asp-action="Delete">
+                    <input type="hidden" asp-for="AcademicoID" />
+                    <a asp-action="Index" class="btn btn-transparent">Voltar para a lista</a>
+                    <input type="submit" value="Delete" class="btn text-white btn-b" />
+                </form>
             </div>
-            <hr />
-            <dl class="row">
-                <dt class = "col-sm-2">
-                    @Html.DisplayNameFor(model => model.RegistroAcademico)
-                </dt>
-                <dd class = "col-sm-10">
-                    @Html.DisplayFor(model => model.RegistroAcademico)
-                </dd>
-                <dt class = "col-sm-2">
-                    @Html.DisplayNameFor(model => model.Nome)
-                </dt>
-                <dd class = "col-sm-10">
-                    @Html.DisplayFor(model => model.Nome)
-                </dd>
-                <dt class = "col-sm-2">
-                    @Html.DisplayNameFor(model => model.Nascimento)
-                </dt>
-                <dd class = "col-sm-10">
-                    @Html.DisplayFor(model => model.Nascimento)
-                </dd>
-            </dl>
-    
-            <form asp-action="Delete">
-                <input type="hidden" asp-for="AcademicoID" />
-                <a asp-action="Index" class="btn btn-transparent">Voltar para a lista</a>
-                <input type="submit" value="Delete" class="btn text-white btn-b"/>
-            </form>
         </div>
     </div>
-</div>
-
-@await Html.PartialAsync("_ScriptPartial")
+</body>

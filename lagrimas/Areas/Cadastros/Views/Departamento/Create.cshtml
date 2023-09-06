@@ -6,11 +6,13 @@
 }
 
     @await Html.PartialAsync("_StylesPartial")
+@await Html.PartialAsync("_ScriptPartial")
+@await Html.PartialAsync("_ValidationScriptsPartial")
 
 <div class="row">
     <div class="col-md-4 d-flex align-items-center justify-content-center">
         <center>
-            <img src="~/images/livraria-digital.png" class="img-fluid" alt="departamentos" class="img-lado">
+            <img src="~/images/livraria-digital.png" class="img-fluid" alt="departamentos">
         </center>
     </div>
     <div class="col-md-6">
@@ -48,6 +50,3 @@
         </div>
     </div>
 </div>
-
-    @await Html.PartialAsync("_ScriptPartial")
-    @await Html.PartialAsync("_ValidationScriptsPartial")

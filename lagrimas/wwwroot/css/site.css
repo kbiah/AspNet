@@ -30,7 +30,7 @@
 }
 
 .img-lado {
-    width: 40%;
+    width: 70%;
     align-content:center;
 }
 
@@ -51,8 +51,6 @@
 }
 
 .card-body {
-    padding-top: 2rem;
-    padding-bottom: 2rem;
 }
 
 .titulo {
@@ -109,6 +107,26 @@ a.navbar-brand {
             max-width: 150px; /* Increase the maximum width for larger screens */
         }
     }
+
+/* Ajuste a exibição da barra de pesquisa e do "Show X entries" na mesma linha */
+.dataTables_length, .dataTables_filter {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Espaço entre os elementos, ajuste conforme necessário */
+}
+
+    /* Ajuste o tamanho do texto "Show X entries" */
+    .dataTables_length label {
+        font-size: 14px;
+    }
+
+
+/* Alinhe o rótulo "Search:" e a barra de pesquisa na mesma linha */
+.dataTables_filter {
+    display: flex;
+    align-items: center;
+}
+
 
 /* Para o menu do index +  */
 @media screen and (max-width: 537px) {

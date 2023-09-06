@@ -4,18 +4,20 @@
 Layout = "_LayoutIES";
 }
 
-    @await Html.PartialAsync("_StylesPartial")
+@await Html.PartialAsync("_StylesPartial")
+@await Html.PartialAsync("_ScriptPartial")
+@await Html.PartialAsync("_ValidationScriptsPartial")
 
 
 <div class="row">
     <div class="col-md-4 d-flex align-items-center justify-content-center">
         <center>
-            <img src="~/images/livraria-digital.png" class="img-fluid" alt="departamentos" class="img-lado">
+            <img src="~/images/livraria-digital.png" class="img-fluid" alt="departamentos">
         </center>
     </div>
     <div class="col-md-6">
         <div class="card-block">
-            <div class="card-header text-center h3 titulo border-0">Alterando um departamento existente</div>
+            <div class="card-header text-center h3 titulo border-0 pb-3">Alterando um departamento existente</div>
             <div class="card-body">
                 <form asp-action="Edit">
                     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
@@ -31,7 +33,7 @@ Layout = "_LayoutIES";
                         <select asp-for="InstituicaoID" class="form-control" asp-items=@ViewBag.Instituicoes></select>
                     </div>
 
-                    <div class="card-footer text-center border-0">
+                    <div class="card-footer text-center border-0 pt-3">
                         <a asp-action="Index" class="btn btn-transparent">Retornar à listagem de departamentos</a>
                         <input type="submit" value="Atualizar Departamento" class="btn btn-b" />
                     </div>
@@ -41,5 +43,3 @@ Layout = "_LayoutIES";
     </div>
 </div>
 
-    @await Html.PartialAsync("_ValidationScriptsPartial")
-    @await Html.PartialAsync("_ScriptPartial")

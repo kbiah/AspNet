@@ -13,7 +13,7 @@ namespace Modelo.Discente
         [StringLength(10, MinimumLength = 10)]
         [RegularExpression("([0-9]{10})")]
         [Required(ErrorMessage = "Preencha esse campo!")]
-        [DisplayName("Número do Registro")]
+        [DisplayName("Nº do Registro")]
         public string RegistroAcademico { get; set; }
 
         [Required(ErrorMessage = "Preencha esse campo!")]

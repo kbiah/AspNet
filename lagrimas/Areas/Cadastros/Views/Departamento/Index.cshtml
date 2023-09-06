@@ -5,6 +5,7 @@
 }
 
 @await Html.PartialAsync("_StylesPartial")
+@await Html.PartialAsync("_ScriptPartial")
 
 @if (@TempData["Message"] != null)
 {
@@ -16,7 +17,7 @@
 <div class="row">
     <div class="col-md-4 d-flex align-items-center justify-content-center">
         <center>
-            <img src="~/images/livraria-digital.png" class="img-fluid" alt="departamentos" class="img-lado">
+            <img src="~/images/livraria-digital.png" class="img-fluid" alt="departamentos">
         </center>
     </div>
     <div class="col-md-8">
@@ -24,46 +25,44 @@
             <div class="card border-0">
                 <div class="card-header text-center h3 titulo border-0">Departamentos Registrados</div>
                 <div class="card-body">
-                    <div class="table-responsive">
-                        <table id="tabela_departamentos" class="table table-striped nolines-table">
-                            <thead>
+                    <table id="tabela_departamentos" class="table table-striped nolines-table">
+                        <thead>
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Nome)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Instituicao.Nome)
+                                </th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
                                 <tr>
-                                    <th>
-                                        @Html.DisplayNameFor(model => model.Nome)
-                                    </th>
-                                    <th>
-                                        @Html.DisplayNameFor(model => model.Instituicao.Nome)
-                                    </th>
-                                    <th></th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @foreach (var item in Model)
-                                {
-                                    <tr>
-                                        <td>
-                                            @Html.DisplayFor(modelItem => item.Nome)
-                                        </td>
-                                        <td>
-                                            @Html.DisplayFor(modelItem => item.Instituicao.Nome)
-                                        </td>
-                                        <td>
-                                            <div class="dropdown">
-                                                <button class="btn btn-b dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                    Ações
-                                                </button>
-                                                <div class="dropdown-menu btn-b text-white" aria-labelledby="dropdownMenuButton">
-                                                    <a asp-action="Edit" asp-route-id="@item.DepartamentoID" class="dropdown-item">Edit</a>
-                                                    <a asp-action="Details" asp-route-id="@item.DepartamentoID" class="dropdown-item">Details</a>
-                                                    <a asp-action="Delete" asp-route-id="@item.DepartamentoID" class="dropdown-item">Delete</a>
-                                                </div>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Nome)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Instituicao.Nome)
+                                    </td>
+                                    <td>
+                                        <div class="dropdown">
+                                            <button class="btn btn-b dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                Detalhes
+                                            </button>
+                                            <div class="dropdown-menu btn-b text-white" aria-labelledby="dropdownMenuButton">
+                                                <a asp-action="Edit" asp-route-id="@item.DepartamentoID" class="dropdown-item">Editar</a>
+                                                <a asp-action="Details" asp-route-id="@item.DepartamentoID" class="dropdown-item">Detalhes</a>
+                                                <a asp-action="Delete" asp-route-id="@item.DepartamentoID" class="dropdown-item">Apagar</a>
                                             </div>
-                                        </td>
-                                    </tr>
-                                }
-                            </tbody>
-                        </table>
-                    </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
                 </div>
                 <div class="card-footer text-center border-0">
                     <a asp-action="Create" class="btn btn-b">Criar um novo departamento</a>
@@ -73,16 +72,14 @@
     </div>
 </div>
 
-@await Html.PartialAsync("_ScriptPartial")
-@*  @await Html.PartialAsync("_PartialDetailsContentCard");*@
 
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $('#tabela_departamentos').DataTable({
-                "order": [[1, "asc"]]
-            });
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#tabela_departamentos').DataTable({
+            "order": [[1, "asc"]]
         });
-    </script>
+    });
+</script>
 
 <script>
     $(document).ready(function () {

@@ -6,16 +6,18 @@
 }
 
 @await Html.PartialAsync("_StylesPartial")
+@await Html.PartialAsync("_ScriptPartial")
+
 
 <div class="row">
     <div class="col-md-4 d-flex align-items-center justify-content-center">
         <center>
-            <img src="~/images/ensino-on-line.png" class="img-fluid img-lado" alt="instituições" />
+            <img src="~/images/ensino-on-line.png" class="img-fluid" alt="instituições" />
         </center>
     </div>
     <div class="col-md-6">
         <div class="card-block">
-            <div class="card-header text-center h3 titulo border-0">
+            <div class="card-header text-center h3 titulo border-0 pb-3">
                 Exibindo um acadêmico existente
             </div>
             <div class="card-body">
@@ -70,15 +72,10 @@
                     </div>
                 </div>
             </div>
-            <div class="card-footer text-center btn-transparent">
+            <div class="card-footer text-center btn-transparent pt-3">
                 <a asp-action="Index" class="btn btn-transparent">Retornar à listagem de acadêmicos</a>
-                <a asp-action="Edit" class="btn text-white btn-b" asp-route-id="@Model.AcademicoID">Alterar</a>
+                <a asp-action="Edit" class="btn text-white btn-b" asp-route-id="@Model.AcademicoID">Editar</a>
             </div>
         </div>
     </div>
 </div>
-
-
-@{
-    await Html.PartialAsync("_ScriptPartial");
-}

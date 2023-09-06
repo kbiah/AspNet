@@ -7,6 +7,7 @@
 <head>
 
     @await Html.PartialAsync("_StylesPartial")
+    @await Html.PartialAsync("_ScriptPartial")
 
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
@@ -64,13 +65,13 @@
                                         Professores
                                     </a>
                                 </li>
-                                <li class="nav-item align-content-right" style="text-align:right">
+                               @* <li class="nav-item align-content-right" style="text-align:right">
                                     <div class="row">
                                         <a class="nav-item text-white" asp-area="" asp-controller="Infra" asp-action="Sair">
                                             teste <i class="fa fa-sign-in"></i>
                                         </a>
                                     </div>
-                                </li>
+                                </li>*@
                             </ul>
                         </div>
                     </nav>
@@ -78,7 +79,7 @@
             </div>
         </div>
 
-        <!-- end header -->
+        <!-- sair -->
         <div class="row" style="text-align:right; padding-right:10px">
             <div class="col-6"></div>
             <div class="col-6">
@@ -114,5 +115,3 @@
 
 </body>
 </html>
-
-@await Html.PartialAsync("_ScriptPartial")

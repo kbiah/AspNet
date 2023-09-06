@@ -6,6 +6,8 @@
 @{
     await Html.RenderPartialAsync("_StylesPartial");
 }
+@await Html.PartialAsync("_ScriptPartial")
+@await Html.PartialAsync("_ValidationScriptsPartial")
 
 <div class="row">
     <div class="col-md-4 d-flex align-items-center">
@@ -64,7 +66,3 @@
     </div>
 </div>
 
-
-@await Html.PartialAsync("_ValidationScriptsPartial")
-@await Html.PartialAsync("_ScriptPartial")
-@await Html.PartialAsync("_StylesPartial")
