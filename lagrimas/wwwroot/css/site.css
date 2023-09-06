@@ -29,10 +29,6 @@
     height: 15px;
 }
 
-.img-lado {
-    width: 70%;
-    align-content:center;
-}
 
 .card-footer {
     background-color:#fff;
@@ -50,13 +46,13 @@
     background-color: #fff;
 }
 
-.card-body {
+.img-fluid {
+    width: 70%;
+    align-content: center;
 }
-
 .titulo {
     color: #5E6EAC;
 }
-
 
 a.navbar-brand {
     white-space: normal;
