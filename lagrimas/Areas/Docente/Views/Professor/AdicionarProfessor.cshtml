@@ -10,85 +10,83 @@
 <div class="row">
     <div class="col-md-4 d-flex align-items-center justify-content-center">
         <center>
-            <img src="~/images/melhor-professora.png" class="img-fluid" alt="instituições">
+            <img src="~/images/melhor-professora.png" class="img-fluid" alt="instituições" class="img-lado">
         </center>
     </div>
     <div class="col-md-6">
-        <div class="card border-0">
-            <div class="card-header text-center h3 titulo border-0 pb-3">
-                Registrando um professor em um curso
-            </div>
-            <div class="card-body">
-                <form asp-action="AdicionarProfessor">
-                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                    <div class="form-group">
-                        <label asp-for="InstituicaoID" class="control-label"></label>
-                        <select asp-for="InstituicaoID" class="form-control" asp-items="@(new SelectList(@ViewBag.Instituicoes, "InstituicaoID", "Nome"))"></select>
-                    </div>
-                    <div class="form-group">
-                        <label asp-for="DepartamentoID" class="control-label"></label>
-                        <select asp-for="DepartamentoID" class="form-control"
-                                asp-items="@(new SelectList(@ViewBag.Departamentos, "DepartamentoID", "Nome"))"
-                                data-url="@Url.Action("ObterDepartamentosPorInstituicao", "Professor", new { area = "Docente" })">
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label asp-for="CursoID" class="control-label"></label>
-                        <select asp-for="CursoID" class="form-control"
-                                asp-items="@(new SelectList(@ViewBag.Cursos, "CursoID", "Nome"))"
-                                data-url="@Url.Action("ObterCursosPorDepartamento", "Professor", new { area = "Docente" })">
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label asp-for="ProfessorID" class="control-label"></label>
-                        <select asp-for="ProfessorID" class="form-control"
-                                asp-items="@(new SelectList(@ViewBag.Professores, "ProfessorID", "Nome"))"
-                                data-url="@Url.Action("ObterProfessoresForaDoCurso", "Professor", new { area = "Docente" })">
-                        </select>
-                    </div>
-                    <div class="form-group text-center h3 pt-3">
-                        <a asp-action="VerificarUltimosRegistros" class="btn btn-white">Verificar últimos registros</a>
-                        <input type="submit" value="Registrar Professor" class="btn text-white btn-b" />
-                    </div>
-                </form>
-            </div>
+        <div class="card-header text-center h3 titulo border-0 pb-3" style=" padding-left:4rem; padding-right:4rem">
+            Registrando um professor em um curso
+        </div>
+        <div class="card-body">
+            <form asp-action="AdicionarProfessor">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="InstituicaoID" class="control-label"></label>
+                    <select asp-for="InstituicaoID" class="form-control" asp-items="@(new SelectList(@ViewBag.Instituicoes, "InstituicaoID", "Nome"))"></select>
+                </div>
+                <div class="form-group">
+                    <label asp-for="DepartamentoID" class="control-label"></label>
+                    <select asp-for="DepartamentoID" class="form-control"
+                            asp-items="@(new SelectList(@ViewBag.Departamentos, "DepartamentoID", "Nome"))"
+                            data-url="@Url.Action("ObterDepartamentosPorInstituicao", "Professor", new { area = "Docente" })">
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label asp-for="CursoID" class="control-label"></label>
+                    <select asp-for="CursoID" class="form-control"
+                            asp-items="@(new SelectList(@ViewBag.Cursos, "CursoID", "Nome"))"
+                            data-url="@Url.Action("ObterCursosPorDepartamento", "Professor", new { area = "Docente" })">
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ProfessorID" class="control-label"></label>
+                    <select asp-for="ProfessorID" class="form-control"
+                            asp-items="@(new SelectList(@ViewBag.Professores, "ProfessorID", "Nome"))"
+                            data-url="@Url.Action("ObterProfessoresForaDoCurso", "Professor", new { area = "Docente" })">
+                    </select>
+                </div>
+                <div class="form-group text-center btn-transparent border-0 pt-3">
+                    <a asp-action="VerificarUltimosRegistros" class="btn btn-transparent">Verificar últimos registros</a>
+                    <input type="submit" value="Registrar Professor" class="btn btn-b" />
+                </div>
+            </form>
         </div>
     </div>
 </div>
 
-<script type="text/javascript">
-    $(document).on("change", '#InstituicaoID', function (e) {
-        var instituicaoID = $(this).find(":selected").val();
-        GetDadosParaDropDownList(instituicaoID, '#DepartamentoID', 'DEPARTAMENTO');
-    });
+    <script type="text/javascript">
+        $(document).on("change", '#InstituicaoID', function (e) {
+            var instituicaoID = $(this).find(":selected").val();
+            GetDadosParaDropDownList(instituicaoID, '#DepartamentoID', 'DEPARTAMENTO');
+        });
 
-    $(document).on("change", '#DepartamentoID', function (e) {
-        var departamentoID = $(this).find(":selected").val();
-        GetDadosParaDropDownList(departamentoID, '#CursoID', 'CURSO');
-    });
+        $(document).on("change", '#DepartamentoID', function (e) {
+            var departamentoID = $(this).find(":selected").val();
+            GetDadosParaDropDownList(departamentoID, '#CursoID', 'CURSO');
+        });
 
-    $(document).on("change", '#CursoID', function (e) {
-        var cursoID = $(this).find(":selected").val();
-        GetDadosParaDropDownList(cursoID, '#ProfessorID', 'PROFESSOR');
-    });
+        $(document).on("change", '#CursoID', function (e) {
+            var cursoID = $(this).find(":selected").val();
+            GetDadosParaDropDownList(cursoID, '#ProfessorID', 'PROFESSOR');
+        });
 
-    function GetDadosParaDropDownList(valorBuscar, controleAtualizar, nomeDado) {
-        var optionControleAtualizar = controleAtualizar + ' option';
-        if (valorBuscar.length > 0) {
-            var url = $(controleAtualizar).data('url');
-            $.getJSON(url, { actionID: valorBuscar }, function (dadosRecebidos) {
+        function GetDadosParaDropDownList(valorBuscar, controleAtualizar, nomeDado) {
+            var optionControleAtualizar = controleAtualizar + ' option';
+            if (valorBuscar.length > 0) {
+                var url = $(controleAtualizar).data('url');
+                $.getJSON(url, { actionID: valorBuscar }, function (dadosRecebidos) {
+                    $(optionControleAtualizar).remove();
+                    $(controleAtualizar).append('<option value="0">Selecione o ' + nomeDado + '</option');
+                    for (i = 0; i < dadosRecebidos.length; i++) {
+                        $(controleAtualizar).append('<option value="' + dadosRecebidos[i].value + '">' + dadosRecebidos[i].text + '</option');
+                    }
+                }).fail(function (jqXHR, textStatus, errorThrown) {
+                    debugger;
+                    alert('Erro de conexão', 'Erro obtendo dados');
+                });
+            } else {
                 $(optionControleAtualizar).remove();
-                $(controleAtualizar).append('<option value="0">Selecione o ' + nomeDado + '</option');
-                for (i = 0; i < dadosRecebidos.length; i++) {
-                    $(controleAtualizar).append('<option value="' + dadosRecebidos[i].value + '">' + dadosRecebidos[i].text + '</option');
-                }
-            }).fail(function (jqXHR, textStatus, errorThrown) {
-                debugger;
-                alert('Erro de conexão', 'Erro obtendo dados');
-            });
-        } else {
-            $(optionControleAtualizar).remove();
-            $(controleAtualizar).append('<option value=""></option');
+                $(controleAtualizar).append('<option value=""></option');
+            }
         }
-    }
-</script>
+    </script>
