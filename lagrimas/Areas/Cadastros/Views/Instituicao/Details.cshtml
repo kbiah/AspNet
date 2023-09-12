@@ -1,27 +1,27 @@
-﻿@model Modelo.Cadastros.Instituicao
+﻿@model Modelo.Cadastros.Instituicao;
 
 
 @{
     Layout = "_LayoutIES";
 }
 
+
 @await Html.PartialAsync("_StylesPartial")
 @await Html.PartialAsync("_ScriptPartial")
 
+
 <div class="row">
-    <div class="col-md-3 d-flex align-items-center justify-content-center">
+    <div class="col-md-4 d-flex align-items-center justify-content-center">
         <center>
             <img src="~/images/auto-aprendizagem.png" class="img-fluid" alt="instituições">
         </center>
     </div>
-    <div class="col-md-9">
+    <div class="col-md-8">
         <div class="card-block">
             <div class="titulo card-header text-center h3 border-0 pb-2">Exibindo uma instituição existente</div>
-
-
-           @{await Html.RenderPartialAsync("~/Areas/Cadastros/Views/Instituicao/_PartialDetailsContentCard.cshtml", Model); }
-    
-
+              @{
+                   await Html.RenderPartialAsync("~/Areas/Cadastros/Views/Instituicao/_PartialDetailsContentCard.cshtml", Model);
+               }
             <div class="card-footer text-center border-0 pt-3">
                 <a asp-action="Index" class="btn btn-transparent">Retornar à listagem de instituições</a>
                 <a asp-action="Edit" class="btn btn-b" asp-route-id="@Model.InstituicaoID">Alterar</a>

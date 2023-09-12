@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
@@ -16,5 +17,6 @@ namespace Modelo.Cadastros
         [Required(ErrorMessage ="Preencha o endereço!")]
         public string Endereco { get; set; }
         public virtual ICollection<Departamento> Departamentos { get; set; }
+
     }
 }

@@ -19,6 +19,7 @@ namespace lagrimas.Data
         public DbSet<Disciplina> Disciplinas { get; set; }
         public DbSet<Academico> Academicos { get; set; }
         public DbSet<Professor> Professores { get; set; }
+
         public IESContext(DbContextOptions<IESContext> options) : base(options)
         {
         }
@@ -51,6 +52,7 @@ namespace lagrimas.Data
                 .HasOne(d => d.Professor)
                 .WithMany(cd => cd.CursosProfessores)
                 .HasForeignKey(d => d.ProfessorID);
+
         }
     }
 }

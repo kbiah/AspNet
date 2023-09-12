@@ -1,0 +1,35 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    @await Html.PartialAsync("_StylesPartial")
+    @await Html.PartialAsync("_ScriptPartial")
+    @using lagrimas.Controllers; @*aqui a controller*@
+    @using lagrimas.Areas.Cadastros.Controllers;
+    @using lagrimas.Areas;
+    @using lagrimas.Models.Dashboard;
+    @using lagrimas.Models.Composite;
+    @using Modelo.Cadastros;
+
+</head>
+
+<body>
+    
+    <div class="col teste pb-3">
+        <div class="rounded shadow p-3 pb-3">
+            <h5>Instituições</h5>
+            <p>Há x instituições</p>
+        </div>
+    </div>
+
+    <div class="col pt-3">
+        <div class="rounded shadow p-3 pt-2">
+            <h5>Departamentos</h5>
+            <p>Há x departamentos</p>
+        </div>
+    </div>
+
+
+</body>
+</html>
+

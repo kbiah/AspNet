@@ -1,18 +1,18 @@
 ﻿
 using lagrimas.Data.DAL.Discente;
 using lagrimas.Data;
-using lagrimas.Areas;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Modelo.Discente;
 using System.Threading.Tasks;
-using Modelo.Cadastros;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.FileProviders;
 using static System.Net.Mime.MediaTypeNames;
 using System.IO;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Authorization;
+using lagrimas.Data.DAL.Cadastros;
+using System.Linq;
 
 [Area("Discente")]
 [Authorize]
@@ -20,6 +20,8 @@ public class AcademicoController : Controller
 {
     private readonly IESContext _context;
     private readonly AcademicoDAL academicoDAL;
+    private readonly DepartamentoDAL departamentoDAL;
+    private readonly InstituicaoDAL instituicaoDAL;
     private IWebHostEnvironment _env;
 
     public AcademicoController(IESContext context, IWebHostEnvironment env)

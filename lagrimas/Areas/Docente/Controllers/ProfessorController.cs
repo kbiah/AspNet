@@ -11,6 +11,7 @@ using System.Collections.Generic;
 using System.Linq;
 using lagrimas.Areas.Docente.Models;
 using Microsoft.AspNetCore.Authorization;
+using System.Threading.Tasks;
 
 namespace lagrimas.Areas.Docente.Controllers
 {
@@ -120,5 +121,11 @@ namespace lagrimas.Areas.Docente.Controllers
                 return View(cursosProfessor);
             }
 
-        }
+            private Task<int> ContarProfessores(long? id)
+            {
+                var contar = professorDAL.ObterProfessoresClassificadosPorNome().Count();
+                return Task.FromResult(contar);
+            }
+
+    }
     }

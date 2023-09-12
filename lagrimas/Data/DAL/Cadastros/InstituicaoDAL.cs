@@ -2,7 +2,6 @@
     using Microsoft.EntityFrameworkCore;
     using Modelo.Cadastros;
     using lagrimas.Areas.Cadastros;
-using lagrimas.Areas;
     using System.Linq;
     using System.Threading.Tasks;
 

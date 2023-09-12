@@ -66,6 +66,7 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="7.0.10" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.10" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="7.0.9" />
+    <PackageReference Include="Stimulsoft.Dashboards.Web.NetCore" Version="2023.3.3" />
   </ItemGroup>
   <ItemGroup>
     <None Include="bin\Debug\net7.0\af\Humanizer.resources.dll" />

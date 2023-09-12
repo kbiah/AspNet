@@ -22,6 +22,7 @@ namespace lagrimas.Areas.Cadastros.Controllers
     {
         private readonly IESContext _context;
         private readonly InstituicaoDAL instituicaoDAL;
+        private readonly DepartamentoDAL departamentoDAL;
 
         public InstituicaoController(IESContext context)
         {
@@ -132,5 +133,6 @@ namespace lagrimas.Areas.Cadastros.Controllers
         {
             return await instituicaoDAL.ObterInstituicaoPorId((long)id) != null;
         }
+
     }
 }

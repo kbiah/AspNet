@@ -8,6 +8,9 @@ using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
+using System.Collections.Generic;
+using lagrimas.Data.DAL.Discente;
+using lagrimas.Models.Dashboard;
 
 namespace lagrimas.Areas.Cadastros.Controllers
 {
@@ -139,6 +142,29 @@ namespace lagrimas.Areas.Cadastros.Controllers
             }
 
             return View(departamento);
+        }
+
+        private int ContarInstituicao(object id)
+        {
+            var contar = instituicaoDAL.ObterInstituicoesClassificadasPorNome().Count();
+            return contar;
+        }
+        private int ContarDepartamento(object id)
+        {
+            var contar = departamentoDAL.ObterDepartamentosClassificadosPorNome().Count();
+            return contar;
+        }
+
+        public IActionResult Dashboard(object id)
+        {
+            var viewModel = new DashboardModel
+            {
+                InstituicoesCount = ContarInstituicao(id),
+                DepartamentosCount = ContarDepartamento(id),
+
+            };
+
+            return PartialView("_DashboardView", viewModel);
         }
     }
 }
