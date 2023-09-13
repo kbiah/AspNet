@@ -155,16 +155,6 @@ namespace lagrimas.Areas.Cadastros.Controllers
             return contar;
         }
 
-        public IActionResult Dashboard(object id)
-        {
-            var viewModel = new DashboardModel
-            {
-                InstituicoesCount = ContarInstituicao(id),
-                DepartamentosCount = ContarDepartamento(id),
-
-            };
-
-            return PartialView("_DashboardView", viewModel);
-        }
+        
     }
 }

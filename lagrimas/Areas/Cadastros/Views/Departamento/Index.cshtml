@@ -1,11 +1,14 @@
 ﻿@model IEnumerable<Modelo.Cadastros.Departamento>
 
+@*@model lagrimas.Models.Todas.TodasViewModel*@
 @{
     Layout = "_LayoutIES";
 }
 
 @await Html.PartialAsync("_StylesPartial")
 @await Html.PartialAsync("_ScriptPartial")
+@using Microsoft.EntityFrameworkCore.Metadata.Internal;
+@using Modelo.Cadastros;
 
 @if (@TempData["Message"] != null)
 {
@@ -18,6 +21,7 @@
     <div class="col-md-4 d-flex align-items-center justify-content-center">
         <center>
             <img src="~/images/livraria-digital.png" class="img-fluid" alt="departamentos">
+           @* @{ await Html.RenderPartialAsync("~/Views/Shared/_DashboardView.cshtml", Model.DashboardModel);}*@
         </center>
     </div>
     <div class="col-md-8">
@@ -27,6 +31,8 @@
                 <div class="card-body">
                     <table id="tabela_departamentos" class="table table-striped nolines-table">
                         <thead>
+                           @* @foreach (var item in Model.DepartamentoIndex)
+                            {*@
                             <tr>
                                 <th>
                                     @Html.DisplayNameFor(model => model.Nome)
@@ -36,9 +42,11 @@
                                 </th>
                                 <th>
                                 </th>
-                            </tr>
+                            </tr> }
                         </thead>
+                       
                         <tbody>
+                            @*@foreach (var item in Model.DepartamentoIndex)*@
                             @foreach (var item in Model)
                             {
                                 <tr>

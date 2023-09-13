@@ -7,10 +7,11 @@ namespace Modelo.Cadastros
 {
     public class Instituicao
     {
-        [DisplayName("Código")]
+        [DisplayName("Código da Instituição")]
         public long? InstituicaoID { get; set; }
 
         [Required(ErrorMessage = "Preencha o nome!")]
+        [DisplayName("Nome da Instituição")]
         public string Nome { get; set; }
 
         [DisplayName("Endereço")]
