@@ -25,6 +25,9 @@
     <None Remove="NovaPasta\**" />
   </ItemGroup>
   <ItemGroup>
+    <Content Remove="wwwroot\js\dashBoardPortal.js" />
+  </ItemGroup>
+  <ItemGroup>
     <Compile Include="Areas\Discente\Controllers\AcademicoController.cs" />
     <Compile Include="obj\Debug\net7.0\.NETCoreApp,Version=v7.0.AssemblyAttributes.cs" />
     <Compile Include="obj\Debug\net7.0\lagrimas.AssemblyInfo.cs" />
