@@ -17,7 +17,6 @@ namespace Modelo.Cadastros
         [DisplayName("Código do Curso")]
         public long? CursoID { get; set; }
 
-
         [Required(ErrorMessage = "Preencha o nome!")]
         public string Nome { get; set; }
 

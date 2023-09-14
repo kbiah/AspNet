@@ -5,23 +5,20 @@
     @await Html.PartialAsync("_StylesPartial")
     @await Html.PartialAsync("_ScriptPartial")
     @using lagrimas.Controllers; @*aqui a controller*@
-    @using lagrimas.Areas.Cadastros.Controllers;
-    @using lagrimas.Areas;
-    @using lagrimas.Models.Dashboard;
-    @using Modelo.Cadastros;
-
 
 <div class="col teste pb-3">
     <div class="rounded shadow p-3 pb-3">
-        <h5>Instituições</h5>
-        <p>Há @Model.quantidade instituições</p>
+        <h5 class="titulo">Instituições</h5>
+        <h2>@Model.quantidade</h2>
+        <p>Registradas até <br /> o momento</p>
     </div>
 </div>
 
-<div class="col pt-3">
+<div class="col teste pt-2">
     <div class="rounded shadow p-3 pt-2">
-        <h5>Departamentos</h5>
-        <p>Há x departamentos</p>
+        <h5 class="titulo">Departamentos</h5>
+        <h2>@Model.quantidadeDepart</h2>
+        <p>Registrados até <br /> o momento</p>
     </div>
 </div>
 

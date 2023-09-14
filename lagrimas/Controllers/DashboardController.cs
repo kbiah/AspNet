@@ -31,19 +31,20 @@ public class DashboardController : Controller
 
 
     [HttpPost]
-    public IActionResult ContarInstituicao()
+    public IActionResult ContarTudo()
     {
         var contagemInst = _context.Instituicoes.Count();
+        var contagemDepart = _context.Departamentos.Count();
 
             var model = new DashboardModel
             {
-                quantidade = contagemInst
+                quantidade = contagemInst,
+                quantidadeDepart = contagemDepart
             };
 
-            // Retorna a contagem de compras.
+            // Retorna a contagem
             return PartialView("_DashboardView", model);
-    }
-
-}
-    }
+        }
+            
+    }}
 

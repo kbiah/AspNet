@@ -13,13 +13,13 @@
     <div class="col-md-4 d-flex align-items-center justify-content-center">
         <center>
 
-            <div id="ContagemInst"></div>
+            <div id="Contagem"></div>
         </center>
     </div>
     <div class="col-md-6">
         <div class="card-block">
-            <div class="card-header text-center h3 titulo border-0">Alterando uma instituição existente</div>
-            <div class="card-body pt-2 pb-2">
+            <div class="card-header text-center h3 titulo border-0 pb-3">Alterando uma instituição existente</div>
+            <div class="card-body pt-2">
                 <form asp-action="Edit">
                     <input type="hidden" asp-for="InstituicaoID" />
                     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
@@ -29,7 +29,7 @@
                         <span asp-validation-for="Nome" class="text-danger"></span>
                     </div>
                     <div class="form-group">
-                        <label asp-for="Endereco" class="control-label"></label>
+                        <label asp-for="Endereco" class="control-label pt-3"></label>
                         <input asp-for="Endereco" class="form-control" />
                         <span asp-validation-for="Endereco" class="text-danger"></span>
                     </div>
@@ -47,13 +47,15 @@
         $(document).ready(function () {
             // Chama a ação
             $.ajax({
-                url: "/Dashboard/ContarInstituicao",
+                url: "/Dashboard/ContarTudo",
                 type: "POST",
                 success: function (data) {
-                    // Exibe a contagem de compras na div "contagemCompras".
-                    $("#ContagemInst").html(data);
+                    $("#Contagem").html(data);
                 }
             });
         });
+
+   
+
     </script>
    

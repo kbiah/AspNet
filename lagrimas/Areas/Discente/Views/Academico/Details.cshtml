@@ -24,49 +24,49 @@
                 <div class="row">
                     <div class="col-9">
                         <div class="form-group">
-                            <label asp-for="AcademicoID" class="control-label"></label>
+                            <label asp-for="AcademicoID" class="control-label pt-2"></label>
                             <br />
                             <div class="input-group">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text">
-                                        <i class="fa-regular fa-key"></i>
+                                        <i class="fa-solid fa-key p-1"></i>
                                     </span>
                                 </div>
                                 <input asp-for="AcademicoID" class="form-control" disabled="disabled" />
                             </div>
-                            <label asp-for="RegistroAcademico" class="control-label"></label>
+                            <label asp-for="RegistroAcademico" class="control-label pt-3"></label>
                             <br />
                             <div class="input-group">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text">
-                                        <i class="fa-regular fa-address-card" aria-hidden="true"></i>
+                                        <i class="fa-regular fa-address-card p-1" aria-hidden="true"></i>
                                     </span>
                                 </div>
                                 <input asp-for="RegistroAcademico" class="form-control" disabled="disabled" />
                             </div>
-                            <label asp-for="Nome" class="control-label"></label>
+                            <label asp-for="Nome" class="control-label pt-3"></label>
                             <br />
                             <div class="input-group">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text">
-                                        <i class="fa-regular fa-user-circle" aria-hidden="true"></i>
+                                        <i class="fa-regular fa-user-circle p-1" aria-hidden="true"></i>
                                     </span>
                                 </div>
                                 <input asp-for="Nome" class="form-control" disabled="disabled" />
                             </div>
-                            <label asp-for="Nascimento" class="control-label"></label>
+                            <label asp-for="Nascimento" class="control-label pt-3"></label>
                             <br />
                             <div class="input-group">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text">
-                                        <i class="fa-regular fa-id-card" aria-hidden="true"></i>
+                                        <i class="fa-regular fa-id-card p-1" aria-hidden="true"></i>
                                     </span>
                                 </div>
                                 <input asp-for="Nascimento" class="form-control" disabled="disabled" />
                             </div>
                         </div>
                     </div>
-                    <div class="col-3">
+                    <div class="col-3 pt-4">
                         <img class="img-thumbnail" src="@Url.Action("GetFoto", "Academico", new { id = Model.AcademicoID })" />
                         @Html.ActionLink("Download", "DownloadFoto", "Academico", new { id = Model.AcademicoID }, null)
                     </div>
