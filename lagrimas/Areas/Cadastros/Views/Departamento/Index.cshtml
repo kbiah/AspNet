@@ -7,6 +7,7 @@
 
 @await Html.PartialAsync("_StylesPartial")
 @await Html.PartialAsync("_ScriptPartial")
+@await Html.PartialAsync("_DashboardScript")
 @using Microsoft.EntityFrameworkCore.Metadata.Internal;
 @using Modelo.Cadastros;
 
@@ -20,7 +21,7 @@
 <div class="row">
     <div class="col-md-4 d-flex align-items-center justify-content-center">
         <center>
-            <img src="~/images/livraria-digital.png" class="img-fluid" alt="departamentos">
+            <div id="Contagem"></div>
            @* @{ await Html.RenderPartialAsync("~/Views/Shared/_DashboardView.cshtml", Model.DashboardModel);}*@
         </center>
     </div>

@@ -6,26 +6,5 @@
 <script src="~/lib/datatables/js/dataTables.bootstrap.js"></script>
 <script src="~/lib/twitter-bootstrap/js/bootstrap.js"></script>
 
-<script>
-    function pageLoading(status) {
-       if (status == 'true') {
-           $("#loader").css('display', 'block');
-       }
-       else {
-           $("#loader").css('display', 'none');
-       }
-    }
-
-    $.ajax({
-          url: 'your index method url',
-          success: function (partial) {
-            $('#results').html(partial);
-            pageLoading("false");
-          }
-          error: function () {
-            pageLoading("false");
-          }
-    });
-<script>
 
 <script src="/js/site.js"></script>

@@ -7,8 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - lagrimas</title>
 </head>
-<body onload="loader()">
-    
+<body>
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
@@ -38,37 +37,9 @@
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2023 - lagrimas - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            2023 - Bianca <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
     </footer>
 </body>
     @RenderSection("Scripts", required: false)
 </html>
-
-<script>
-
-    function loader(){
-        alert("teste");
-    } 
-
-    function pageLoading(status) {
-        if (status == 'true') {
-            $("#loader").css('display', 'block');
-        }
-        else {
-            $("#loader").css('display', 'none');
-        }
-    }
-
-    $.ajax({
-        url: 'your index method url',
-        success: function (partial) {
-            $('#results').html(partial);
-            pageLoading("false");
-        }
-              error: function () {
-            pageLoading("false");
-        }
-    });
-</script>
-

@@ -14,11 +14,12 @@
 
 @await Html.PartialAsync("_StylesPartial")
 @await Html.PartialAsync("_ScriptPartial")
+@await Html.PartialAsync("_DashboardScript")
 
 <div class="row">
     <div class="col-md-4 d-flex align-items-center justify-content-center">
         <center>
-            <img src="~/images/auto-aprendizagem.png" class="img-fluid" alt="instituições">
+            <div id="Contagem"></div>
         </center>
     </div>
     <div class="col-md-8">
