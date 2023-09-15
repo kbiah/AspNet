@@ -4,7 +4,8 @@
     Layout = "~/Views/Shared/_LayoutIES.cshtml";
 }
 <head>
-    <link rel="stylesheet" href="~/css/site.css">
+    @await Html.PartialAsync("_StylesPartial");
+    @await Html.PartialAsync("_ScriptPartial");
 </head>
 
 <img src="~/images/index_aluno.jpg" class="img-fluid" alt="imagem garota index" width="980" height="auto">
@@ -14,28 +15,28 @@
     <div class="six_box">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-md-3 border ">
+                <div class="col-md-3 border shadow ">
                     <div class="six_probpx bg-white"><br />
                         <a class="text-dark" asp-area="cadastros" asp-controller="Departamento" asp-action="Index" style="font-size:larger">
                             <img src="~/images/franchise_9185648.png" class="boxes"><br /> Departamentos
                         </a>
                     </div>
                 </div>
-                <div class="col-md-3 border" style="background-color:#5E6EAC">
+                <div class="col-md-3 border shadow" style="background-color:#5E6EAC">
                     <div class="six_probpx"> <br />
                         <a class="text-dark" asp-area="cadastros" asp-controller="Instituicao" asp-action="Index" style="font-size:larger">
                             <img src="~/images/aluno.png" class="boxes"><br /> Instituições
                         </a>
                     </div>
                 </div>
-                <div class="col-md-3 border">
+                <div class="col-md-3 border shadow">
                     <div class="six_probpx bg-white"><br />
                         <a class="text-dark" asp-area="Docente" asp-controller="Professor" asp-action="AdicionarProfessor" style="font-size:larger">
                             <img src="~/images/mortarboard_1940611.png" class="boxes"><br /> Professores
                         </a>
                     </div>
                 </div>
-                <div class="col-md-3 border" style="background-color:#5E6EAC">
+                <div class="col-md-3 border shadow" style="background-color:#5E6EAC">
                     <div class="six_probpx"><br />
                         <a class="text-dark" asp-area="discente" asp-controller="Academico" asp-action="Index" style="font-size:larger">
                             <img src="~/images/mesa-do-professor.png" class="boxes"><br /> Acadêmicos

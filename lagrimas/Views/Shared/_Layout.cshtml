@@ -1,16 +1,14 @@
-﻿<!DOCTYPE html>
-<html>
-
+﻿<html>
 <head>
-
     @await Html.PartialAsync("_StylesPartial");
+    @await Html.PartialAsync("_ScriptPartial");
 
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - lagrimas</title>
 </head>
-
-<body>
+<body onload="loader()">
+    
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
@@ -47,7 +45,30 @@
     @RenderSection("Scripts", required: false)
 </html>
 
-    @await Html.PartialAsync("_ScriptPartial");
+<script>
 
+    function loader(){
+        alert("teste");
+    } 
 
+    function pageLoading(status) {
+        if (status == 'true') {
+            $("#loader").css('display', 'block');
+        }
+        else {
+            $("#loader").css('display', 'none');
+        }
+    }
+
+    $.ajax({
+        url: 'your index method url',
+        success: function (partial) {
+            $('#results').html(partial);
+            pageLoading("false");
+        }
+              error: function () {
+            pageLoading("false");
+        }
+    });
+</script>
 

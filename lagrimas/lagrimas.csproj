@@ -69,7 +69,6 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="7.0.10" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.10" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="7.0.9" />
-    <PackageReference Include="Stimulsoft.Dashboards.Web.NetCore" Version="2023.3.3" />
   </ItemGroup>
   <ItemGroup>
     <None Include="bin\Debug\net7.0\af\Humanizer.resources.dll" />
@@ -631,7 +630,6 @@
     <None Include="obj\lagrimas.csproj.nuget.g.props" />
     <None Include="obj\lagrimas.csproj.nuget.g.targets" />
     <None Include="obj\project.nuget.cache" />
-    <None Include="wwwroot\images\drops_599508.png" />
     <None Include="wwwroot\images\franchise_9185648.png" />
     <None Include="wwwroot\images\mortarboard_1940611.png" />
   </ItemGroup>

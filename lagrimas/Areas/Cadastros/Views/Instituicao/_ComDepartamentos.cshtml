@@ -4,20 +4,15 @@
 @await Html.PartialAsync("_ScriptPartial")
 
 <div class="card-block pt-3" style="width: auto">
-    <div class="titulo card-header text-center">Departamentos Registrados na Instituição</div>
+    <div class="titulo h6 card-header text-center">Departamentos da Instituição</div>
     <div class="card-body">
+
         <table>
-            <thead>
-                <tr>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Instituicao.Nome)
-                    </th>
-                </tr>
-            </thead>
-            <tbody>
+            <tbody class="align-content-center">
                 @foreach (var item in Model)
                 {
                     <tr>
+
                         <td>
                             @Html.DisplayFor(modelItem => item.Nome)
                         </td>
@@ -25,5 +20,6 @@
                 }
             </tbody>
         </table>
+
     </div>
 </div>

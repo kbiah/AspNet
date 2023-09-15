@@ -7,17 +7,17 @@
 
 @await Html.PartialAsync("_StylesPartial")
 @await Html.PartialAsync("_ScriptPartial")
+@await Html.PartialAsync("_DashboardScript")
 @await Html.PartialAsync("_ValidationScriptsPartial")
 
 <div class="row">
     <div class="col-md-4 d-flex align-items-center justify-content-center">
         <center>
-
             <div id="Contagem"></div>
         </center>
     </div>
-    <div class="col-md-6">
-        <div class="card-block">
+    <div class="col-md-6 pt-3">
+        <div class="card-block shadow pb-4 pt-4">
             <div class="card-header text-center h3 titulo border-0 pb-3">Alterando uma instituição existente</div>
             <div class="card-body pt-2">
                 <form asp-action="Edit">
@@ -40,11 +40,11 @@
                 </form>
             </div>
         </div>
-    </div>
+    </div><div class="col-md-2"></div>
 </div>
 
-    <script>
-        $(document).ready(function () {
+    @*<script>
+    $(function () {
             // Chama a ação
             $.ajax({
                 url: "/Dashboard/ContarTudo",
@@ -57,5 +57,5 @@
 
    
 
-    </script>
+    </script>*@
    

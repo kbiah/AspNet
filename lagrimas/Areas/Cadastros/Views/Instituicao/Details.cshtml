@@ -8,17 +8,18 @@
 
 @await Html.PartialAsync("_StylesPartial")
 @await Html.PartialAsync("_ScriptPartial")
+@await Html.PartialAsync("_DashboardScript")
 
 
 <div class="row">
-    <div class="col-md-4 d-flex align-items-center justify-content-center">
+    <div class="col-md-3 d-flex align-items-center justify-content-center">
         <center>
-            <img src="~/images/auto-aprendizagem.png" class="img-fluid" alt="instituições">
+            <div id="Contagem"></div>
         </center>
     </div>
-    <div class="col-md-8">
-        <div class="card-block">
-            <div class="titulo card-header text-center h3 border-0 pb-2">Exibindo uma instituição existente</div>
+    <div class="col-md-7 pt-3">
+        <div class="card-block shadow pb-4 pt-4">
+            <div class="titulo card-header text-center h3 border-0 pb-3">Exibindo uma instituição existente</div>
               @{
                    await Html.RenderPartialAsync("~/Areas/Cadastros/Views/Instituicao/_PartialDetailsContentCard.cshtml", Model);
                }
@@ -27,6 +28,7 @@
                 <a asp-action="Edit" class="btn btn-b" asp-route-id="@Model.InstituicaoID">Alterar</a>
             </div>
         </div>
+    </div><div class="col-md-2 pt-3">
     </div>
 </div>
 

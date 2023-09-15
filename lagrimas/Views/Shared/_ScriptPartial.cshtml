@@ -1,11 +1,31 @@
 ﻿
-<script src="~/lib/jquery/jquery.js"></script>
-<script src="~/lib/popper.js/umd/popper.js"></script>
+<script src="~/lib/jquery/jquery.min.js"></script>
+<script src="~/lib/popper.js/umd/popper.min.js"></script>
 <script src="~/lib/font-awesome/js/fontawesome.js"></script>
 <script src="~/lib/datatables/js/jquery.dataTables.js"></script>
 <script src="~/lib/datatables/js/dataTables.bootstrap.js"></script>
 <script src="~/lib/twitter-bootstrap/js/bootstrap.js"></script>
 
-<script src="/js/dashBoardPortal.js"></script>
-<script src="/js/ObjetoItemDashBoard.js"></script>
+<script>
+    function pageLoading(status) {
+       if (status == 'true') {
+           $("#loader").css('display', 'block');
+       }
+       else {
+           $("#loader").css('display', 'none');
+       }
+    }
+
+    $.ajax({
+          url: 'your index method url',
+          success: function (partial) {
+            $('#results').html(partial);
+            pageLoading("false");
+          }
+          error: function () {
+            pageLoading("false");
+          }
+    });
+<script>
+
 <script src="/js/site.js"></script>

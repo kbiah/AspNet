@@ -12,95 +12,70 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <title>@ViewData["Title"] - Asp.Net </title>
+
 </head>
-<body>
-    <div class="header">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-4 p-0">
-                    <a class="navbar-brand text-dark h4" asp-area="" asp-controller="Home" asp-action="Index">
-                        <img src="~/images/drops_599508.png" alt="Logo" class="logo" width="30" height="30" class="d-inline-block align-text-top">
-                        Lagrimas.Net
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
+<body onload="loader()">
 
     @if (SignInManager.IsSignedIn(User))
     {
         <!-- com login aqui -->
         <div class="container-fluid">
-            <div class="row" style="background-color:#5E6EAC; margin: 0;">
-                <div class="col-12" style="padding: 0;">
-                    <nav class="navigation navbar navbar-expand-lg navbar-dark">
-                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-                        <div class="collapse navbar-collapse" id="navbarsExample04">
-                            <ul class="navbar-nav">
-                                <li class="nav-item active" style="padding-left:1rem">
-                                    <a class="navbar-brand text-white" asp-area="" asp-controller="Home" asp-action="Index">
-                                        Início
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-item nav-link text-white" asp-area="Cadastros" asp-controller="Instituicao" asp-action="Index">
-                                        Instituições
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-item nav-link text-white" asp-area="Cadastros" asp-controller="Departamento" asp-action="Index">
-                                        Departamentos
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-item nav-link text-white" asp-area="Discente" asp-controller="Academico" asp-action="Index">
-                                        Academicos
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-item nav-link text-white" asp-area="Docente" asp-controller="Professor" asp-action="AdicionarProfessor">
-                                        Professores
-                                    </a>
-                                </li>
-                               @* <li class="nav-item align-content-right" style="text-align:right">
-                                    <div class="row">
-                                        <a class="nav-item text-white" asp-area="" asp-controller="Infra" asp-action="Sair">
-                                            teste <i class="fa fa-sign-in"></i>
-                                        </a>
-                                    </div>
-                                </li>*@
-                            </ul>
-                        </div>
-                    </nav>
-                </div>
-            </div>
-        </div>
+            <div class="row shadow" style="background-color:#fff; margin: 0;">
+                <nav class="navigation navbar navbar-expand-lg navbar-dark">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarsExample04">
+                        <ul class="navbar-nav">
+                            <li class="nav-item active p-1">
+                                <a class="navbar-brand text-white pl-3" asp-area="" asp-controller="Home" asp-action="Index">
+                                    <img src="~/images/LogoAzul.svg" alt="Logo" width="30" height="30" class=" logo d-inline-block pl-3">
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-item nav-link text-black" asp-area="Cadastros" asp-controller="Instituicao" asp-action="Index">
+                                    Instituições
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-item nav-link text-black" asp-area="Cadastros" asp-controller="Departamento" asp-action="Index">
+                                    Departamentos
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-item nav-link text-black" asp-area="Discente" asp-controller="Academico" asp-action="Index">
+                                    Academicos
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-item nav-link text-black" asp-area="Docente" asp-controller="Professor" asp-action="AdicionarProfessor">
+                                    Professores
+                                </a>
+                            </li>
+                        </ul>
+                        <span class="login">
 
-        <!-- sair -->
-        <div class="row" style="text-align:right; padding-right:10px">
-            <div class="col-6"></div>
-            <div class="col-6">
-                <a class="nav-item text-dark">
-                    <a class="btn" asp-area="" asp-controller="Infra" asp-action="Sair" style="font-size:15px"><i class="fa-solid fa-sign-out" aria-hidden="true"></i>&nbsp; Sair</a>
-                </a>
+                            <a class=" text-dark btn align-content-right " asp-area="" asp-controller="Infra" asp-action="Sair" style="font-size:15px">
+                                <i class="fa-solid fa-sign-out" aria-hidden="true"></i>
+                                Sair
+                            </a>
+                        </span>
+                    </div>
+                </nav>
             </div>
         </div>
     }
     else
-    {   
+    {
         <script>
-        // primeiro olha se o alerta já tinha sido exbidp uma vez se for false faz faz o if
-        if (!localStorage.getItem('alertShown'))
-        {
-            alert("Faça o login para acessar o site."); // se ñ mostra a msg
-            localStorage.setItem('alertShown', 'true'); // e deixa true a opção de ter mostrado ele
-        }
+            // primeiro olha se o alerta já tinha sido exbidp uma vez se for false faz faz o if
+            if (!localStorage.getItem('alertShown')) {
+                alert("Faça o login para acessar o site."); // se ñ mostra a msg
+                localStorage.setItem('alertShown', 'true'); // e deixa true a opção de ter mostrado ele
+            }
 
         </script>
     }
-
     <br />
     <center>
         <div class="col-12">
@@ -114,3 +89,9 @@
 
 </body>
 </html>
+
+<script>
+    function loader() {
+        alert("teste");
+    }
+</script>

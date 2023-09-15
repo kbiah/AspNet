@@ -1,0 +1,16 @@
+﻿
+<script>
+    $(function () {
+        // Chama a ação
+        $.ajax({
+            url: "/Dashboard/ContarTudo",
+            type: "POST",
+            success: function (data) {
+                $("#Contagem").html(data);
+            }
+        });
+    });
+
+
+
+</script>
