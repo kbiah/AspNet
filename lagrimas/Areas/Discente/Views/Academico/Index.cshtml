@@ -5,7 +5,6 @@
 
 @await Html.PartialAsync("_StylesPartial")
 @await Html.PartialAsync("_ScriptPartial")
-@await Html.PartialAsync("_DashboardScript")
 
 @if (@TempData["Message"] != null)
 {
@@ -14,18 +13,21 @@
     </div>
 }
 
-<div class="row">
-    <div class="col-md-4 d-flex align-items-center justify-content-center">
-        <center>
-            <div id="Contagem"></div>
-        </center>
-    </div>
-    <div class="col-sm-8">
-        <div class="card border-0">
-            <div class="card-header text-center h3 titulo border-0">
-                Acadêmicos Registrados
-            </div>
-            <div class="card-body">
+<html>
+<body>
+    @await Html.PartialAsync("_DashboardScript")
+    <div class="row">
+        <div class="col-md-4 d-flex align-items-center justify-content-center">
+            <center>
+                <div id="Contagem"></div>
+            </center>
+        </div>
+        <div class="col-sm-7">
+            <div class="card border-0">
+                <div class="card-header text-center h3 titulo border-0">
+                    Acadêmicos Registrados
+                </div>
+                <div class="card-body">
                     <table id="tabela_academicos" class="table table-striped nolines-table">
                         <thead>
                             <tr>
@@ -76,22 +78,23 @@
                             }
                         </tbody>
                     </table>
+                </div>
+                <div class="card-footer text-center border-0">
+                    <a asp-action="Create" id="teste" class="btn btn-b">Registrar um novo acadêmico</a>
+                </div>
             </div>
-            <div class="card-footer text-center border-0">
-                <a asp-action="Create" id="teste" class="btn btn-b">Registrar um novo acadêmico</a>
-            </div>
-        </div>
+        </div><div class="col-sm-1"></div>
     </div>
-</div>
+</body>
+</html>
 
-    
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $('#tabela_academicos').DataTable({
-                "order": [[1, "asc"]]
-            });
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#tabela_academicos').DataTable({
+            "order": [[1, "asc"]]
         });
-    </script>
+    });
+</script>
 
 <script>
     $(document).ready(function () {

@@ -7,7 +7,6 @@
 
 @await Html.PartialAsync("_StylesPartial")
 @await Html.PartialAsync("_ScriptPartial")
-@await Html.PartialAsync("_DashboardScript")
 @using Microsoft.EntityFrameworkCore.Metadata.Internal;
 @using Modelo.Cadastros;
 
@@ -18,11 +17,15 @@
     </div>
 }
 
+<body>
+    @await Html.PartialAsync("_DashboardScript")
+
 <div class="row">
-    <div class="col-md-4 d-flex align-items-center justify-content-center">
+    <div class="col-md-3 d-flex align-items-center justify-content-center">
         <center>
+            <div id="Modal"></div>
             <div id="Contagem"></div>
-           @* @{ await Html.RenderPartialAsync("~/Views/Shared/_DashboardView.cshtml", Model.DashboardModel);}*@
+            @* @{ await Html.RenderPartialAsync("~/Views/Shared/_DashboardView.cshtml", Model.DashboardModel);}*@
         </center>
     </div>
     <div class="col-md-8">
@@ -79,8 +82,9 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div><div class="col-sm-1"></div>
 </div>
+
 
 
 <script type="text/javascript">
@@ -95,11 +99,11 @@
     $(document).ready(function () {
         // quando clicar
         $(".dropdown-toggle").click(function () {
-            // deixar visibel
+            // deixar visivel o dropdown menu
             $(this).next(".dropdown-menu").toggleClass("show");
         });
 
-        // pra fechar quando clocae fora
+        // pra fechar quando clicar fora
         $(document).click(function (e) {
             if (!$(e.target).closest(".dropdown").length) {
                 $(".dropdown-menu").removeClass("show");
@@ -107,3 +111,4 @@
         });
     });
 </script>
+</body>

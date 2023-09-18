@@ -1,11 +1,14 @@
-﻿
-<script>
+﻿<script>
+    var $body = $("body"); // diz que <body> é p $body aqui
+    $body.addClass("loading"); // tela de carregamento antes
+
     $(function () {
         // Chama a ação
         $.ajax({
             url: "/Dashboard/ContarTudo",
             type: "POST",
             success: function (data) {
+                $body.removeClass("loading");
                 $("#Contagem").html(data);
             }
         });

@@ -14,15 +14,18 @@
 
 @await Html.PartialAsync("_StylesPartial")
 @await Html.PartialAsync("_ScriptPartial")
-@await Html.PartialAsync("_DashboardScript")
 
+
+<body>
+    @await Html.PartialAsync("_DashboardScript")
 <div class="row">
     <div class="col-md-4 d-flex align-items-center justify-content-center">
         <center>
+            <div id="Modal"></div>
             <div id="Contagem"></div>
         </center>
     </div>
-    <div class="col-md-8">
+    <div class="col-md-7">
         <div class="card border-0">
             <div class="card-header text-center h3 titulo border-0">Instituições Registradas</div>
             <div class="card-body">
@@ -77,7 +80,7 @@
                 <a asp-action="Create" class="btn btn-b">Registrar uma nova instituição</a>
             </div>
         </div>
-    </div>
+    </div><div class="col-sm-1"></div>
 </div>
 
 
@@ -104,4 +107,5 @@
             }
         });
     });
-</script>
+    </script>
+</body>
